@@ -54,6 +54,11 @@ ul li a{
     position: absolute !important;
     top: -40px !important;
 }
+.a-flight{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
 .plane{
     margin: 6px;
     font-size: 50px;
@@ -164,4 +169,7 @@ ul li a{
     .vid-img:hover{
         width: 90vw;
     }
+}
+.d-none{
+    display: none;
 }
