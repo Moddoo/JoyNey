@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Permanent+Marker|Righteous|Sriracha&display=swap&subset=thai" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
-<body id="home" class="scrollspy"> 
+<body id="home" class="scrollspy">
 
     <!-- naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaav -->
 
@@ -42,10 +42,10 @@
            <li><a href="#cart" class="modal-trigger"><i class="fa fa-shopping-cart"></i></a></li>
         </ul>
         <div class="modal" id="cart" style="top:0 !important;min-height: 5000vh !important; overflow: auto;left: 0 !important;">
-            <!-- <div class="modal-content">
+            <div class="modal-content">
                 <h3 class="indigo">items</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti dolorum facere perspiciatis! Dignissimos voluptate nobis ut! Corporis deleniti provident ipsa, magni aspernatur doloremque vel in? Cupiditate eveniet dicta nisi!</p>
-            </div> -->
+            </div>
             <div class="modal-footer">
                 <a href="" class="modal-close btn red">Close</a>
             </div>
@@ -79,8 +79,6 @@
         </li>
       </ul>  
    </section>
-  
-
 
          <!-- flightsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
 
@@ -356,71 +354,150 @@
                     <button class="btn large deep-orange lighten-2 hoverable">Check Availability</button>
                 </div>
         </div>
-        <section class="section-popular">
-            <div class="container">
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="">
-                                <span class="card-title">Egypt</span>
-                            </div>
-                            <div class="card-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aut,  
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col s12 m4">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
-                                <span class="card-title">china</span>
-                            </div>
-                            <div class="card-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aut,  
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
-                                <span class="card-title">amesterdam</span>
-                            </div>
-                            <div class="card-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aut,  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
            
 </section>
 
-
-
-
     <!-- Eventsssssssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
     <section id="events" class="section event-section center scrollspy" style="margin-top: 50px;padding: 0;">
-        
+
+
         <div class="section">
             <h1 class="center white-text">Event Time</h1>
         </div>
-
-      <section id="search" class="section1 teal darken-1 white-text center">
-            <div class="container">
+        <div class="container events">
+            <h4>Search for Events on Your Joyney</h4>
+            <div class="row">
+                <form class="col s12">
                 <div class="row">
-                    <div class="col s12">
-                        <h3>Search Events</h3>
-                        <div class="input-field">
-                            <input type="text" class="white grey-text">
-                        </div>
+                    <div class="input-field col s12 m6">
+                    <input placeholder="e.g. Houston" id="city" type="text" class="validate">
+                    <label for="city">City</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                    <input placeholder="e.g. Music, Comedy Show" id="event-type" type="text" class="validate">
+                    <label for="event-type">Event Type (optional)</label>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                    <input placeholder="Start Date" id="event-start-date" type="text" class="datepicker">
+                    <label for="event-date">Select a date range (optional)</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                    <input placeholder="End Date" id="event-end-date" type="text" class="datepicker">
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="events-button" class="btn waves-effect waves-light" type="submit" name="action">
+                        <i class="material-icons">event_available</i>
+                        Search for Events
+                    </button>    
+                </div>
+                </form>
             </div>
-        </section>    
+            <div class="row">
+                <div class="col s12" id="events-div"></div>
+            </div>
+        </div>
+    </section>
+
+        <section id="activities" class="center">
+            <div class="container activities">
+                <h4>Search for Activities on Your Joyney</h4>
+                <div class="row">
+                    <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s4"><a class="active" href="#restaurants">Dining</a></li>
+                        <li class="tab col s4"><a href="#attractions">Attractions</a></li>
+                        <li class="tab col s4"><a href="#parks">Parks</a></li>
+                    </ul>
+                    </div>
+                    <div id="restaurants" class="col s12">
+                        <h5>Dine In, Carry Out, or Get Delivery</h5>
+                        <div class="row">
+                            <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12 m6">
+                                <input placeholder="e.g. Houston (or 123 Main St. Houston, TX)" id="address" type="text" class="validate">
+                                <label for="address">City (or Street Address)</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                <input placeholder="e.g. Tex-Mex" id="cuisine" type="text" class="validate">
+                                <label for="cuisine">Cuisine (optional)</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <label>Dine-in/Pick-up/Delivery Option</label>
+                                    <select class="browser-default" id="method">
+                                        <option value="" selected>Choose Option</option>
+                                        <option value="dine-in">Dine-in</option>
+                                        <option value="pick-up-delivery">Pick-up or Delivery</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button id="restaurants-button" class="btn waves-effect waves-light" type="submit" name="action">
+                                    <i class="material-icons">local_dining</i>
+                                    Search for Restaurants
+                                </button>    
+                            </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col s12" id="restaurants-div"></div>
+                        </div>
+                    </div>
+                    <div id="attractions" class="col s12">
+                        <h5>View Top Local Attractions</h5>
+        
+                        <div class="row">
+                            <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                <input placeholder="e.g. Houston" id="attractions-city" type="text" class="validate">
+                                <label for="attractions-city">City</label>
+                                </div>
+                            </div>
+                            <button id="attractions-button" class="btn waves-effect waves-light" type="submit" name="action">
+                                <i class="material-icons">local_see</i>
+                                Search for Attractions
+                            </button>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col s12" id="attractions-div"></div>
+                        </div>
+                    </div>
+                    <div id="parks" class="col s12">
+                        <h5>Search for National Parks in the State</h5>
+                        <div class="row">
+                            <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                <input placeholder="e.g. TX" id="state" type="text" class="validate">
+                                <label for="state">Two-Letter State Code</label>
+                                </div>
+                            </div>
+                            <button id="parks-button" class="btn waves-effect waves-light" type="submit" name="action">
+                                <i class="material-icons">local_florist</i>
+                                Search for Parks
+                            </button>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col s12" id="parks-div"></div>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </section>
+
+           
+
+
+
+
         <section class="section-popular">
             <div class="container">
                 <div class="row">
@@ -435,7 +512,6 @@
                             </div>
                         </div>
                     </div>
-                   
                     <div class="col s12 m4">
                         <div class="card">
                             <div class="card-image">
@@ -464,6 +540,8 @@
     </section>
                         
                         
+        
+
 
 
     <!-- contaaaaaaaaaaaaaaaaaaaaacttttttttttttttttttttttttttttttttttttttttttttt -->
@@ -519,6 +597,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+    <script src="assets/main.js"></script>
+    <script src="assets/javascript/script.js"></script>
     <script>
           function search() {
         let fly = document.querySelectorAll(".fly");

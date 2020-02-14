@@ -134,6 +134,26 @@ ul li a{
 #search input{
       padding: 0 20px;
 }
+
+/* .card {
+    height: 400px;
+    overflow: hidden;
+}
+
+.card:hover {
+    overflow: auto;
+}
+
+.card-title {
+    font-size: 20px !important;
+    line-height: 24px !important;
+    font-weight: bold !important;
+}
+
+.card-content {
+    text-align: left;
+} */
+
 .input-field input::-webkit-input-placeholder{
     color: black;
     font-weight: 400;
