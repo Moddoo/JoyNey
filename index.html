@@ -25,22 +25,31 @@
                 </a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#events" class="black-text hov">Events</a></li>
-                    <li><a href="" class="black-text hov">Hotels</a></li>
+                    <li><a href="#hotels" class="black-text hov">Hotels</a></li>
                     <li><a href="#flights" class="black-text hov">Flights</a></li>
                     <li><a href="#contact" class="black-text hov">Contact</a></li>
-                    <li class="li"><a href="" class="cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    <li class="li"><a href="#cart" class="cart modal-trigger"><i class="fa fa-shopping-cart"></i></a></li>
                 </ul>
                </div>
            </div>
        </nav>
    </div>
         <ul class="sidenav" id="mobile-nav">
-           <li><a href="" class="black-text">Events</a></li>
-           <li><a href="" class="black-text">Hotels</a></li>
-           <li><a href="" class="black-text">Flights</a></li>
-           <li><a href="" class="black-text">Contact</a></li>
-           <li><a href="" class=""><i class="fa fa-shopping-cart"></i></a></li>
+           <li><a href="#events" class="black-text">Events</a></li>
+           <li><a href="#hotels" class="black-text">Hotels</a></li>
+           <li><a href="#flights" class="black-text">Flights</a></li>
+           <li><a href="#contact" class="black-text">Contact</a></li>
+           <li><a href="#cart" class="modal-trigger"><i class="fa fa-shopping-cart"></i></a></li>
         </ul>
+        <div class="modal" id="cart" style="top:0 !important;min-height: 5000vh !important; overflow: auto;left: 0 !important;">
+            <div class="modal-content">
+                <h3 class="indigo">items</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti dolorum facere perspiciatis! Dignissimos voluptate nobis ut! Corporis deleniti provident ipsa, magni aspernatur doloremque vel in? Cupiditate eveniet dicta nisi!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="modal-close btn red">Close</a>
+            </div>
+        </div>
 
 
    <!-- sliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiider -->
@@ -92,58 +101,90 @@
                 <div class="col s12 " id="one-way">
                     <div class="input-field">
                         <i class="material-icons prefix">flight_takeoff</i>
-                        <input type="text">
-                        <label for="" class="black-text">Fly from</label>
+                        <input type="text" class="fly black-text" placeholder="Fly from">
+                        <!-- <label for="" class="black-text">Fly from</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">flight_land</i>
-                        <input type="text">
-                        <label for="" class="black-text">Fly to</label>
+                        <input type="text" class="fly" placeholder="Fly to">
+                        <!-- <label for="" class="black-text">Fly to</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">date_range</i>
-                        <input type="text" class="datepicker">
-                        <label for="" class="black-text">Departing</label>
+                        <input type="text" class="datepicker" placeholder="Departing">
+                        <!-- <label for="" class="black-text">Departing</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">person</i>
-                        <input type="text">
-                        <label for="" class="black-text">Passengers</label>
+                        <input type="text" placeholder="Passengers">
+                        <!-- <label for="" class="black-text">Passengers</label> -->
                     </div>
                 </div> 
                 <div class="col s12" id="round-trip">
                     <div class="input-field">
                         <i class="material-icons prefix">flight_takeoff</i>
-                        <input type="text">
-                        <label for="" class="black-text">Fly from</label>
+                        <input type="text" class="fly black-text" placeholder="Fly from">
+                        <!-- <label for="" class="black-text">Fly from</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">flight_land</i>
-                        <input type="text">
-                        <label for="" class="black-text">Fly to</label>
+                        <input type="text" class="fly" placeholder="Fly to">
+                        <!-- <label for="" class="black-text">Fly to</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">date_range</i>
-                        <input type="text" class="datepicker">
-                        <label for="" class="black-text">Departing</label>
+                        <input type="text" class="datepicker" placeholder="Departing">
+                        <!-- <label for="" class="black-text">Departing</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">date_range</i>
-                        <input type="text"class="datepicker">
-                        <label for="" class="black-text">Returning</label>
+                        <input type="text"class="datepicker" placeholder="Returning">
+                        <!-- <label for="" class="black-text">Returning</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">person</i>
-                        <input type="text">
-                        <label for="" class="black-text">passengers</label>
+                        <input type="text" placeholder="passengers">
+                        <!-- <label for="" class="black-text">passengers</label> -->
                     </div>
                 </div>
                         <div class="input-field col s12 center">
                             <input type="submit" class="btn large green" id="btn-flight">
                         </div>
             </div>
-            <div class="col s12 m7  offset-m1 result z-depth-2">
-               <h1 class="center">results</h1>
+
+            <div class="col s12 m8">
+             
+                   <div class="row indigo accent-1 row-f">
+                        <!-- <div class="col s6">
+                            <div class="card red lighten-5">
+                              
+                                <div class="card-content" style="padding: 2%">
+                                    <p style="font-weight: 600;">Departing Date:</p>  
+                                    <p style="font-weight: 600;">Returning Date:</p>  
+                                    <p style="font-weight: 600;"> AirPort Name:</p>  
+                                    <p style="font-weight: 600;"> AirPort Location:</p>  
+                                    <p style="font-weight: 600;"> Price:</p>  
+                                 </div>
+                            </div>
+                        </div> -->
+                       
+                        
+                        <div class="col s6 col-f">
+                            <div class="card red lighten-5" style="position: relative;">
+                             
+                                <div class="card-content" style="padding: 2%;">
+                                    <p style="font-weight: 700;">Departing:<span style="font-weight: 400;padding-left: 7px;"></span></p> 
+                                    <p style="font-weight: 700;">Returning:<span style="font-weight: 400;padding-left: 7px;"></span></p>  
+                                    <p style="font-weight: 700;">Airport:<span style="font-weight: 400;padding-left: 7px;"></span></p>  
+                                    <p style="font-weight: 700;">Location:<span style="font-weight: 400;padding-left: 7px;"></span></p>  
+                                    <p style="font-weight: 700;">Price:<span style="font-weight: 400;padding-left: 7px;"></span></p>  
+                                 </div>
+                                 <a class="right a-flight btn-floating btn-small green">
+                                    <i class="material-icons">add</i>
+                                  </a>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
@@ -252,6 +293,35 @@
     </div>
 </div>
 
+<!-- videooooooooooooooooooooooooooooooooooooooooooo -->
+<div class="row center video">
+    <div class="col s12 "style="position:absolute; height: 100%;">
+        <iframe id="frame" width="60%" height="82%" src="https://www.youtube.com/embed/SSqgaFE9igo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col s6 offset-s3 offset-l4 vid">
+        <div class="card vid-img">
+            <div class="card-image col s2">
+               <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="" style="margin-top: 8px;">
+            </div>
+        </div>
+        <div class="card vid-img">
+            <div class="card-image col s2">
+               <img src="https://images.unsplash.com/photo-1580223530509-849e0ad583ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
+            </div>
+        </div>
+        <div class="card vid-img">
+            <div class="card-image col s2">
+               <img src="https://images.unsplash.com/photo-1554254648-2d58a1bc3fd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
+            </div>
+        </div>
+        <div class="card vid-img">
+            <div class="card-image col s2">
+               <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- hoooooooooooooooooooooooooooooooootels -->
 <section id="hotels" class="section scrollspy z-depth-3">
     <div class="section">
@@ -261,7 +331,7 @@
     </div>
     <div class="section1 green lighten-1 z-depth-3">
         <h5 class="center">Book NOW</h5>
-         <div class="row " style="display: flex">
+         <div class="row " style="display:flex;">
              <div class="card-panel col s-12 m4">
                 <i class="material-icons">add_location</i>
                  <input type="text" placeholder="Location">
@@ -329,16 +399,17 @@
                 <div class="col s12" id="events-div"></div>
             </div>
         </div>
-        
-        <section id="activities">
+    </section>
+
+        <section id="activities" class="center">
             <div class="container activities">
                 <h4>Search for Activities on Your Joyney</h4>
                 <div class="row">
                     <div class="col s12">
                     <ul class="tabs">
-                        <li class="tab col s3"><a class="active" href="#restaurants">Dining</a></li>
-                        <li class="tab col s3"><a href="#attractions">Attractions</a></li>
-                        <li class="tab col s3"><a href="#parks">Parks</a></li>
+                        <li class="tab col s4"><a class="active" href="#restaurants">Dining</a></li>
+                        <li class="tab col s4"><a href="#attractions">Attractions</a></li>
+                        <li class="tab col s4"><a href="#parks">Parks</a></li>
                     </ul>
                     </div>
                     <div id="restaurants" class="col s12">
@@ -421,6 +492,11 @@
                 </div>        
             </div>
         </section>
+
+           
+
+
+
 
         <section class="section-popular">
             <div class="container">
@@ -524,5 +600,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
     <script src="assets/main.js"></script>
     <script src="assets/javascript/script.js"></script>
+    <script>
+          function search() {
+        let fly = document.querySelectorAll(".fly");
+        fly.forEach(function(el) {
+            let autoComplete = new google.maps.places.Autocomplete(el);
+          
+            console.log(el.getAttribute("placeholder"))
+        })
+    }
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIJIuzQlXkBtR77hdMVzAtvfkEtsV-2aY&input=airport&libraries=places&callback=search"></script>
+    <script src="assets/main.js"></script>
 </body>
 </html>

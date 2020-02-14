@@ -49,7 +49,7 @@ function dineInAJAX (locationID) {
       rowDiv.attr("class", "row");
       for (var j = 0; j < 4; j++) {
         var colDiv = $("<div>");
-        colDiv.attr("class", "col s6 m3");
+        colDiv.attr("class", "col s6 l3");
 
         var x = i*4 + j;
         var result = searchResults[x];
@@ -143,7 +143,7 @@ function attractionAJAX (locationID) {
       rowDiv.attr("class", "row");
       for (var j = 0; j < 4; j++) {
         var colDiv = $("<div>");
-        colDiv.attr("class", "col s6 m3");
+        colDiv.attr("class", "col s6 l3");
         
         var x = i*4 + j;    
         var result = searchResults[x];
@@ -249,7 +249,7 @@ $("#restaurants-button").on("click", function(event) {
           rowDiv.attr("class", "row");
           for (var j = 0; j < 4; j++) {
             var colDiv = $("<div>");
-            colDiv.attr("class", "col s6 m3");
+            colDiv.attr("class", "col s6 l3");
 
             var x = i*4 + j;
             var result = searchResults[x];
@@ -436,7 +436,7 @@ $("#events-button").on("click", function(event) {
             rowDiv.attr("class", "row");
             for (var j = 0; j < 4; j++) {
               var colDiv = $("<div>");
-              colDiv.attr("class", "col s6 m3");
+              colDiv.attr("class", "col s6 l3");
 
               var x = i*4 + j;
               var result = searchResults[x];
@@ -505,6 +505,15 @@ $("#events-button").on("click", function(event) {
               rowDiv.append(colDiv);
             } 
             $("#events-div").append(rowDiv);
+
+            // $(".btn-floating").click(function() {
+            //   let text = $(this).children().text();
+            //       $(this).children().text(
+            //           text === "add" ? "close" : "add"
+            //       )
+            //    console.log($(this).children().text())
+            //   $(this).toggleClass("red green")
+            //       })
           }
         },
     error: function(xhr, status, err) {
@@ -512,3 +521,12 @@ $("#events-button").on("click", function(event) {
         }
   })
 });
+
+$("#events-div").on("click", function(event) {
+  event.preventDefault();
+  if(event.target.matches("i")) {
+    var eventName = event.target.parentElement.parentElement.nextElementSibling.children[0];
+    addItem(eventName.textContent);
+    console.log(itinerary);
+  }
+})
