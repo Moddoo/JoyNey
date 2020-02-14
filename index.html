@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JoyNey</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Permanent+Marker|Righteous|Sriracha&display=swap&subset=thai" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body id="home" class="scrollspy">
+
+    <!-- naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaav -->
+
+   <div class="navbar-fixed">
+       <nav class="">
+           <div class="container">
+               <div class="nav-wrapper">
+                <a href="#home" class="brand-logo black-text">&#x0134;0&#x0176;&#x019D;&#xc8;&#x2144;</a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                    <i class="material-icons">&#x2630;</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#events" class="black-text hov">Events</a></li>
+                    <li><a href="" class="black-text hov">Hotels</a></li>
+                    <li><a href="#flights" class="black-text hov">Flights</a></li>
+                    <li><a href="#contact" class="black-text hov">Contact</a></li>
+                    <li class="li"><a href="" class="cart"><i class="fa fa-shopping-cart"></i></a></li>
+                </ul>
+               </div>
+           </div>
+       </nav>
+   </div>
+        <ul class="sidenav" id="mobile-nav">
+           <li><a href="" class="black-text">Events</a></li>
+           <li><a href="" class="black-text">Hotels</a></li>
+           <li><a href="" class="black-text">Flights</a></li>
+           <li><a href="" class="black-text">Contact</a></li>
+           <li><a href="" class=""><i class="fa fa-shopping-cart"></i></a></li>
+        </ul>
+
+
+   <!-- sliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiider -->
+  
+   <section class="slider">
+    <ul class="slides">
+        <li>
+          <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60">
+          <div class="caption center-align">
+            <h2>We Work With All Budgets</h2>
+            <h5 class="light grey-text text-lighten-3 hide-on-small-only">Here's our small slogan.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="https://images.unsplash.com/photo-1520437358207-323b43b50729?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60">
+          <div class="caption left-align">
+            <h3>Enjoy With One Click</h3>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60">
+          <div class="caption right-align">
+            <h2>Take Your Dream Vacation</h2>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          </div>
+        </li>
+      </ul>  
+   </section>
+
+         <!-- flightsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
+
+    <section class="section #fce4ec pink lighten-5 z-depth-5" id="flights">
+        <div class="section">
+            <h1 class="center" >Let's wing it</h1>
+                <h5 class="center">Book a Hot Rate ® Flight and save today!</h5>
+        </div>
+        <div class="row">
+            <div class="col s12 m4 z-depth-3 light-green accent-1">
+                <ul class="tabs light-green accent-1">
+                    <li class="tab col s6">
+                         <a href="#round-trip" class="indigo-text text-darken-4">Round-trip</a>
+                    </li>
+                    <li class="tab col s6">
+                         <a href="#one-way" class="indigo-text text-darken-4">One-way</a>
+                    </li>
+                </ul> <br>
+
+                <div class="col s12 " id="one-way">
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_takeoff</i>
+                        <input type="text">
+                        <label for="" class="black-text">Fly from</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_land</i>
+                        <input type="text">
+                        <label for="" class="black-text">Fly to</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text" class="datepicker">
+                        <label for="" class="black-text">Departing</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text">
+                        <label for="" class="black-text">Passengers</label>
+                    </div>
+                </div> 
+                <div class="col s12" id="round-trip">
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_takeoff</i>
+                        <input type="text">
+                        <label for="" class="black-text">Fly from</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_land</i>
+                        <input type="text">
+                        <label for="" class="black-text">Fly to</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text" class="datepicker">
+                        <label for="" class="black-text">Departing</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text"class="datepicker">
+                        <label for="" class="black-text">Returning</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text">
+                        <label for="" class="black-text">passengers</label>
+                    </div>
+                </div>
+                        <div class="input-field col s12 center">
+                            <input type="submit" class="btn large green" id="btn-flight">
+                        </div>
+            </div>
+            <div class="col s12 m7  offset-m1 result z-depth-2">
+               <h1 class="center">results</h1>
+            </div>
+        </div>
+    </section>
+
+<!-- parallaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaax -->
+
+    <div class="parallax-container">
+        <div class="parallax">
+            <img class="responsive-img" src="https://images.unsplash.com/photo-1564689439743-baefac4b52d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
+        </div>
+    </div>
+
+   <!-- folloooooooooooooooooooooooooooooow -->
+   <section class="section section-follow teal darken-2 white-text center valign-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4>Follow JoyNey</h4>
+                <p>follow us for special offers</p>
+                <br>
+                <a href="#" class="white-text">
+                 <i class="fa fa-facebook-square fa-2x"></i>
+                </a>
+                <a href="#" class="white-text">
+                 <i class="fa fa-twitter fa-2x"></i>
+                <a href="#" class="white-text">
+                 <i class="fa fa-youtube-play fa-2x"></i>
+                </a>
+                <a href="#" class="white-text">
+                 <i class="fa fa-instagram fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="moments" class="section section-gallery scrollspy">
+    <div class="container">
+        <h4 class="center blue-text">Moments</h4>
+        <div class="row">
+            <div class="col s12 m3">
+                <img src="https://source.unsplash.com/1600x900?resort" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3">
+                <img src="https://source.unsplash.com/1600x900?beach" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3">
+                <img src="https://source.unsplash.com/1600x900?desert" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3">
+                <img src="https://source.unsplash.com/1600x900?ice" alt="" class="materialboxed responsive-img">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m3 z-depth-">
+                <img src="https://source.unsplash.com/1600x900?building" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3">
+                <img src="https://source.unsplash.com/1600x900?trees" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3">
+                <img src="https://source.unsplash.com/1600x900?pets" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3">
+                <img src="https://source.unsplash.com/1600x900?nature" alt="" class="materialboxed responsive-img">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m3">
+                <img src="https://source.unsplash.com/1600x900?bikes" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3 z-depth-">
+                <img src="https://source.unsplash.com/1600x900?cars" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3 z-depth-">
+                <img src="https://source.unsplash.com/1600x900?camp" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3 z-depth-">
+                <img src="https://source.unsplash.com/1600x900?cruise" alt="" class="materialboxed responsive-img">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m3 z-depth-">
+                <img src="https://source.unsplash.com/1600x900?hotels" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3 z-depth-">
+                <img src="https://source.unsplash.com/1600x900?space" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3 z-depth-">
+                <img src="https://source.unsplash.com/1600x900?sun" alt="" class="materialboxed responsive-img">
+            </div>
+            <div class="col s12 m3 z-depth-">
+                <img src="https://source.unsplash.com/1600x900?water-fall" alt="" class="materialboxed responsive-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- parallaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaax -->
+<div class="parallax-container">
+    <div class="parallax">
+        <img class="responsive-img" src="https://images.unsplash.com/photo-1534113414509-0eec2bfb493f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
+    </div>
+</div>
+
+<!-- hoooooooooooooooooooooooooooooooootels -->
+<section id="hotels" class="section scrollspy z-depth-3">
+    <div class="section">
+        <h1 class="center">
+            Enjoy A Luxury Experience
+        </h1>
+    </div>
+    <div class="section1 green lighten-1 z-depth-3">
+        <h5 class="center">Book NOW</h5>
+         <div class="row " style="display: flex">
+             <div class="card-panel col s-12 m4">
+                <i class="material-icons">add_location</i>
+                 <input type="text" placeholder="Location">
+             </div>
+             <div class="card-panel col s-12 m4">
+                <i class="material-icons">date_range</i>
+                 <input type="text" placeholder="Check-IN" class="datepicker">
+             </div>
+             <div class="card-panel col s12 m4">
+                <i class="material-icons">date_range</i>       <input type="text" placeholder="Check-OUT" class="datepicker">
+             </div>
+             <div class="card-panel col s12 m4">
+                <i class="material-icons">person</i>                 <input type="text" placeholder="Guests">
+             </div>
+             <div class="card-panel col s12 m4">
+                <i class="material-icons">hotel</i>                 <input type="text" placeholder="Rooms">
+             </div>
+            </div>
+                 <div class="col s12 center">
+                    <button class="btn large deep-orange lighten-2 hoverable">Check Availability</button>
+                </div>
+        </div>
+           
+</section>
+
+    <!-- Eventsssssssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
+    <section id="events" class="section event-section center scrollspy" style="margin-top: 50px;padding: 0;">
+
+
+        <div class="section">
+            <h1 class="center white-text">Event Time</h1>
+        </div>
+        <div class="container events">
+            <h4>Search for Events on Your Joyney</h4>
+            <div class="row">
+                <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                    <input placeholder="e.g. Houston" id="city" type="text" class="validate">
+                    <label for="city">City</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                    <input placeholder="e.g. Music, Comedy Show" id="event-type" type="text" class="validate">
+                    <label for="event-type">Event Type (optional)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                    <input placeholder="Start Date" id="event-start-date" type="text" class="datepicker">
+                    <label for="event-date">Select a date range (optional)</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                    <input placeholder="End Date" id="event-end-date" type="text" class="datepicker">
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="events-button" class="btn waves-effect waves-light" type="submit" name="action">
+                        <i class="material-icons">event_available</i>
+                        Search for Events
+                    </button>    
+                </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col s12" id="events-div"></div>
+            </div>
+        </div>
+        
+        <section id="activities">
+            <div class="container activities">
+                <h4>Search for Activities on Your Joyney</h4>
+                <div class="row">
+                    <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s3"><a class="active" href="#restaurants">Dining</a></li>
+                        <li class="tab col s3"><a href="#attractions">Attractions</a></li>
+                        <li class="tab col s3"><a href="#parks">Parks</a></li>
+                    </ul>
+                    </div>
+                    <div id="restaurants" class="col s12">
+                        <h5>Dine In, Carry Out, or Get Delivery</h5>
+                        <div class="row">
+                            <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12 m6">
+                                <input placeholder="e.g. Houston (or 123 Main St. Houston, TX)" id="address" type="text" class="validate">
+                                <label for="address">City (or Street Address)</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                <input placeholder="e.g. Tex-Mex" id="cuisine" type="text" class="validate">
+                                <label for="cuisine">Cuisine (optional)</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <label>Dine-in/Pick-up/Delivery Option</label>
+                                    <select class="browser-default" id="method">
+                                        <option value="" selected>Choose Option</option>
+                                        <option value="dine-in">Dine-in</option>
+                                        <option value="pick-up-delivery">Pick-up or Delivery</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button id="restaurants-button" class="btn waves-effect waves-light" type="submit" name="action">
+                                    <i class="material-icons">local_dining</i>
+                                    Search for Restaurants
+                                </button>    
+                            </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col s12" id="restaurants-div"></div>
+                        </div>
+                    </div>
+                    <div id="attractions" class="col s12">
+                        <h5>View Top Local Attractions</h5>
+        
+                        <div class="row">
+                            <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                <input placeholder="e.g. Houston" id="attractions-city" type="text" class="validate">
+                                <label for="attractions-city">City</label>
+                                </div>
+                            </div>
+                            <button id="attractions-button" class="btn waves-effect waves-light" type="submit" name="action">
+                                <i class="material-icons">local_see</i>
+                                Search for Attractions
+                            </button>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col s12" id="attractions-div"></div>
+                        </div>
+                    </div>
+                    <div id="parks" class="col s12">
+                        <h5>Search for National Parks in the State</h5>
+                        <div class="row">
+                            <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                <input placeholder="e.g. TX" id="state" type="text" class="validate">
+                                <label for="state">Two-Letter State Code</label>
+                                </div>
+                            </div>
+                            <button id="parks-button" class="btn waves-effect waves-light" type="submit" name="action">
+                                <i class="material-icons">local_florist</i>
+                                Search for Parks
+                            </button>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col s12" id="parks-div"></div>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </section>
+
+        <section class="section-popular">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="">
+                                <span class="card-title">Egypt</span>
+                            </div>
+                            <div class="card-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aut,  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
+                                <span class="card-title">china</span>
+                            </div>
+                            <div class="card-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aut,  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
+                                <span class="card-title">amesterdam</span>
+                            </div>
+                            <div class="card-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aut,  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+                        
+                        
+        
+
+
+
+    <!-- contaaaaaaaaaaaaaaaaaaaaacttttttttttttttttttttttttttttttttttttttttttttt -->
+
+    <section id="contact" class="section section-contact scrollspy grey lighten-3">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card-panel  teal white-text center">
+                        <i class="material-icons">email</i>
+                        <h5>Contact us</h5>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo reiciendis molestias nam at repellat vitae iure fuga. Voluptatem cumque aperiam numquam obcaecati Lorem ipsum dolor sit amet consectetur adipisicing asperiores nemo optio dignissimos, mollitia autem eveniet sunt hic officiis. Possimus,  a. !</p>
+                    </div>
+                    <div class="collection with-header  yellow darken-3">
+                      <h5 class="collection-header  yellow darken-3">Location:</h5>
+                      <h6 class="collection-item  yellow darken-3">JoyNey Agency</h6>
+                      <h6 class="collection-item  yellow darken-3">4444 xxxx st, suite 205 houston TX 55555</h6>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="card-panel  blue-grey darken-1 white-text">
+                        <h5>Fill The Form</h5>
+                        <div class="input-field">
+                            <input type="text" placeholder="Name">
+                        </div>
+                        <div class="input-field">
+                            <input type="text" placeholder="Email">
+                        </div>
+                        <div class="input-field">
+                            <input type="text" placeholder="Phone">
+                        </div>
+                        <div class="input-field">
+                            <textarea class="materialize-textarea" placeholder="Write your message here..."></textarea>
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" value="submit" class="btn">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+   
+
+     <!-- fooooooooooooooooooooooter -->
+
+     <footer class="section grey darken-2 white-text center">
+        <p class="flow-text">&#x0134;0&#x0176;&#x019D;&#xc8;&#x2144; &copy; 2020</p>
+    </footer>
+  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+    <script src="assets/main.js"></script>
+    <script src="assets/javascript/script.js"></script>
+</body>
+</html>
