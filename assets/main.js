@@ -139,7 +139,7 @@ function cardGeneratorHotel(array) {
   $("#results-hotel").empty();
 
   for (let i = 0; i < array.length; i++) {
-    let cardDiv = elementGenerator("div", "card-hotel");
+    let cardDiv = elementGenerator("div", "card card-hotel");
     let imageContainerDiv = elementGenerator(
       "div",
       "card-image waves-effect waves-block waves-light"
