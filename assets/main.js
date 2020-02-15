@@ -41,38 +41,6 @@ $(document).ready(function(){
     $(".row-f>:first-child").hide()
      btnF.click(function(){
     
-        // for(i=0; i<4; i++) {
-        //     let divR  =  $(".row-f");
-        //     let divC  =  $("<div>").addClass("col s6");
-        //     let divCa =  $("<div>").addClass("card red lighten-5");
-        //     let divCc = $("<div>").addClass("card-content");
-        //     let a = $("<a>").addClass("btn-floating btn-small red right a-flight");
-        //     let icon = $("<i>").addClass("material-icons").text("add");                
-        //     $("<p>").text("Departing Date:").appendTo(divCc);
-        //     $("<p>").text("Returning Date:").appendTo(divCc);
-        //     $("<p>").text("AirPort Name:").appendTo(divCc);
-        //     $("<p>").text("AirPort Location:").appendTo(divCc);
-        //     $("<p>").text("Price:").appendTo(divCc);
-        //     icon.appendTo(a)
-        //     a.appendTo(divCc)
-        //     divCa.append(divCc)
-        //     divC.append(divCa)
-        //     divR.append(divC)
-        //     console.log(divCa.children())
-
-        // }
-    //    let copy = $(".row-f>:first-child").clone(true);
-    //    console.log(copy)
-    //    console.log(copy[0].firstElementChild.firstElementChild.children[1])
-    //    copy[0].firstElementChild.firstElementChild.children[0].textContent="hello"
-    //    copy[0].firstElementChild.firstElementChild.children[1].textContent="hello"
-    //    copy[0].firstElementChild.firstElementChild.children[2].textContent="hello"
-    //    copy[0].firstElementChild.firstElementChild.children[3].textContent="hello"
-    //    copy[0].firstElementChild.firstElementChild.children[4].textContent="hello"
-      
-    //    copy.appendTo($(".row-f")) 
-   
-    
     for(i=0; i<6; i++) {   
         $(".row-f>:first-child").show()
         let copy = $(".row-f>:first-child").clone(true);
