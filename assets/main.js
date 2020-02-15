@@ -28,6 +28,11 @@ $(document).ready(function() {
 let codeFrom, codeTo;
 let emptyFlightsArr = [];
 let emptyHotelArr = [];
+let emptyAirportArr = [];
+
+// Global Actions
+
+$(".row-f>:first-child").hide();
 
 // Functions
 
@@ -134,7 +139,7 @@ function cardGeneratorHotel(array) {
   $("#results-hotel").empty();
 
   for (let i = 0; i < array.length; i++) {
-    let cardDiv = elementGenerator("div", "card");
+    let cardDiv = elementGenerator("div", "card-hotel");
     let imageContainerDiv = elementGenerator(
       "div",
       "card-image waves-effect waves-block waves-light"
@@ -203,6 +208,7 @@ function cardGeneratorHotel(array) {
 
 function airportData(fromCode, toCode, beginningPeriod) {
   emptyFlightsArr = [];
+  emptyAirportArr = [];
   let flightURL =
     "https://cors-anywhere.herokuapp.com/https://api.travelpayouts.com/v2/prices/latest?currency=USD&origin=" +
     fromCode +
@@ -211,13 +217,23 @@ function airportData(fromCode, toCode, beginningPeriod) {
     "&beginning_of_period=" +
     beginningPeriod +
     "&period_type=year&page=1&limit=1000&show_to_affiliates=true&sorting=price&trip_class=0&token=bfd2ae7b2a5bfa1154b02dea888e62b1";
-  console.log(flightURL);
+
+  let settingsAirportFrom = {
+    async: true,
+    crossDomain: true,
+    url: "https://airport-info.p.rapidapi.com/airport?iata=" + fromCode,
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "airport-info.p.rapidapi.com",
+      "x-rapidapi-key": "10701e6cc9msh93b8b8858829b24p16c255jsncff566ba3db6"
+    }
+  };
+
   $.ajax({
     url: flightURL,
     method: "GET"
   }).then(function(response) {
     console.log(response);
-    console.log(beginningPeriod);
     for (let i = 0; i < response.data.length; i++) {
       if (response.data[i].depart_date === beginningPeriod) {
         emptyFlightsArr.push(response.data[i]);
@@ -231,84 +247,45 @@ function airportData(fromCode, toCode, beginningPeriod) {
         "You did not get any results matching your departure date but here are some other options: "
       );
       $(".results-div").append(errorDiv);
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 6; i++) {
         emptyFlightsArr.push(response.data[i]);
       }
     }
-    console.log(emptyFlightsArr);
-    cardGeneratorFlights(emptyFlightsArr);
+    $.ajax(settingsAirportFrom).then(function(response) {
+      console.log(response);
+      emptyAirportArr.push(response);
+      console.log(emptyFlightsArr, emptyAirportArr);
+      cardGeneratorFlights(emptyFlightsArr, emptyAirportArr);
+    });
   });
 }
 
 // AHMED FLIGHTS DATA GENERATION
-function cardGeneratorFlights(array) {
-  for (let i = 0; i < array.length; i++) {
-    let cardDiv = elementGenerator("div", "card");
-    let imageContainerDiv = elementGenerator(
-      "div",
-      "card-image waves-effect waves-block waves-light"
-    );
-    let newImage = elementGenerator("img", "activator");
-    imageContainerDiv.append(newImage);
-    let cardContentDiv = elementGenerator("div", "card-content");
-    let spanCardContent = elementGenerator(
-      "span",
-      "card-title activator grey-text text-darken-4",
-      "",
-      array[i].origin + " to " + array[i].destination
-    );
-    cardContentDiv.append(spanCardContent);
-    let iMoreVert = elementGenerator(
-      "i",
-      "material-icons right",
-      "",
-      "more_vert"
-    );
-    let linkButton = elementGenerator(
-      "a",
-      "btn-floating halfway-fab waves-effect waves-light red"
-    );
-    let iAdd = elementGenerator("i", "material-icons", "", "add");
-    linkButton.append(iAdd);
-    spanCardContent.append(linkButton, iMoreVert);
-    let cardRevealDiv = elementGenerator("div", "card-reveal");
-    let spanCardReveal = elementGenerator(
-      "span",
-      "card-title grey-text text-darken-4",
-      "",
-      array[i].origin + " to " + array[i].destination
-    );
-    let iClose = elementGenerator("i", "material-icons right", "", "close");
-    spanCardReveal.append(iClose);
-    let departDateDiv = elementGenerator(
-      "div",
-      "flight-info",
-      "departure",
-      "Depart Date: " + array[i].depart_date
-    );
-    let returnDateDiv = elementGenerator(
-      "div",
-      "flight-info",
-      "return",
-      "Return Date: " + array[i].return_date
-    );
-    let priceDiv = elementGenerator(
-      "div",
-      "flight-info",
-      "price",
-      "Price: $" + array[i].value
-    );
-    cardRevealDiv.append(
-      spanCardReveal,
-      departDateDiv,
-      returnDateDiv,
-      priceDiv
-    );
-
-    cardDiv.append(imageContainerDiv, cardContentDiv, cardRevealDiv);
-
-    $(".results-div").append(cardDiv);
+function cardGeneratorFlights(array1, array2) {
+  for (let i = 0; i < array1.length; i++) {
+    $(".row-f>:first-child").show();
+    let copy = $(".row-f>:first-child").clone(true);
+    copy[0].firstElementChild.firstElementChild.children[0].children[0].textContent =
+      array1[i].depart_date;
+    copy[0].firstElementChild.firstElementChild.children[1].children[0].textContent =
+      array1[i].return_date;
+    copy[0].firstElementChild.firstElementChild.children[2].children[0].textContent =
+      array2[0].name;
+    copy[0].firstElementChild.firstElementChild.children[3].children[0].textContent =
+      array2[0].street_number +
+      " " +
+      array2[0].street +
+      " , " +
+      array2[0].city +
+      " , " +
+      array2[0].state +
+      " , " +
+      array2[0].postal_code;
+    copy[0].firstElementChild.firstElementChild.children[4].children[0].textContent =
+      "$" + array1[i].value;
+    copy.appendTo($(".row-f"));
   }
+  $(".row-f>:first-child").hide();
 }
 
 // Event Listeners
@@ -354,6 +331,7 @@ $("#btn-flight").on("click", function() {
       "x-rapidapi-key": "10701e6cc9msh93b8b8858829b24p16c255jsncff566ba3db6"
     },
     success: function(data) {
+      console.log(data);
       codeFromOne = data[0].code;
     }
   };
@@ -447,4 +425,19 @@ $(".link").on("click", function() {
   $("#returning-round-trip").val("");
   $("#passenger-count-round").val("");
   $("#passenger-count-one").val("");
+});
+
+$(".btn-floating").click(function() {
+  let text = $(this)
+    .children()
+    .text();
+  $(this)
+    .children()
+    .text(text === "add" ? "close" : "add");
+  console.log(
+    $(this)
+      .children()
+      .text()
+  );
+  $(this).toggleClass("red green");
 });

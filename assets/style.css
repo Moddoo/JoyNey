@@ -146,7 +146,7 @@ ul li a {
   height: 200px;
   width: 100%;
 }
-.card {
+.card-hotel {
   height: 400px;
   width: 300px;
 }
@@ -154,39 +154,38 @@ ul li a {
 .error-div {
   color: red;
 }
-.input-field input::-webkit-input-placeholder{
-    color: black;
-    font-weight: 400;
+.input-field input::-webkit-input-placeholder {
+  color: black;
+  font-weight: 400;
 }
-.video{
-    position: relative;
-    height:75vh;
-    margin: 10px
+.video {
+  position: relative;
+  height: 75vh;
+  margin: 10px;
 }
-.vid{
-    position: absolute;
-    padding-left: 3vw;
-    bottom: 50px;
-    height: 3.3vh;
-
+.vid {
+  position: absolute;
+  padding-left: 3vw;
+  bottom: 50px;
+  height: 3.3vh;
 }
-.vid-img{
-    width: 600px;
-    opacity: 0.7;
-    transition: 0.5s;
+.vid-img {
+  width: 600px;
+  opacity: 0.7;
+  transition: 0.5s;
 }
-.vid-img:hover{
-     cursor: pointer;
-     width: 800px;
-     opacity: 1;
+.vid-img:hover {
+  cursor: pointer;
+  width: 800px;
+  opacity: 1;
 }
 @media (max-width: 800px) {
-    .vid-img{
-        width: 70vw;
-        opacity: 0.6;
-        transition: 0.5s;
-    }
-    .vid-img:hover{
-        width: 90vw;
-    }
+  .vid-img {
+    width: 70vw;
+    opacity: 0.6;
+    transition: 0.5s;
+  }
+  .vid-img:hover {
+    width: 90vw;
+  }
 }
