@@ -635,4 +635,4 @@ $("#parks-div").on("click", function(event) {
   }
 });
 
-// renderCart();
+renderCart();
