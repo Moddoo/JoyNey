@@ -335,24 +335,29 @@ ul li a {
   padding: 0 20px;
 }
 
-/* .card {
+#activities .card, #events .card {
     height: 400px;
     overflow: hidden;
 }
 
-.card:hover {
+#activities .card:hover, #events .card:hover {
     overflow: auto;
 }
 
-.card-title {
+#activities .card-image img, #events .card-image img {
+    height: 150px;
+    object-fit: cover;
+}
+
+#activities .card-title, #events .card-title {
     font-size: 20px !important;
     line-height: 24px !important;
     font-weight: bold !important;
 }
 
-.card-content {
+#activities .card-content, #events .card-content {
     text-align: left;
-} */
+}
 
 .input-field input::-webkit-input-placeholder {
   color: black;

@@ -10,10 +10,25 @@ var eatStreetAPIKey = "1e04ce32b770452a";
 var tripAdvisorAPIKey = "10701e6cc9msh93b8b8858829b24p16c255jsncff566ba3db6";
 var itinerary = [];
 
+function renderCart () {
+  $(".modal-content").empty();
+  var itineraryString = localStorage.getItem("itinerary");
+  if (itineraryString !== null) {
+    itinerary = JSON.parse(itineraryString);
+  }
+  for (var i = 0; i < itinerary.length; i++) {
+    var cartItem = $("<p>").text(itinerary[i]);
+    $(".modal-content").append(cartItem);
+  }
+}
+
 function addItem(item) {
-  itinerary.push(item);
+  if (itinerary.indexOf(item) === -1) {
+    itinerary.push(item);
+  }
   var itineraryString = JSON.stringify(itinerary);
   localStorage.setItem("itinerary", itineraryString);
+  renderCart();
 }
 
 function dineInAJAX(locationID) {
@@ -21,7 +36,7 @@ function dineInAJAX(locationID) {
     async: true,
     crossDomain: true,
     url:
-      "https://tripadvisor1.p.rapidapi.com/restaurants/list?limit=20&location_id=" +
+      "https://tripadvisor1.p.rapidapi.com/restaurants/list?limit=16&location_id=" +
       locationID,
     method: "GET",
     headers: {
@@ -72,7 +87,7 @@ function dineInAJAX(locationID) {
         var addLink = $("<a>");
         addLink.attr(
           "class",
-          "btn-floating halfway-fab waves-effect waves-light red"
+          "btn-floating halfway-fab waves-effect waves-light green"
         );
         var addButton = $("<i>").attr("class", "material-icons");
         addButton.text("add");
@@ -81,7 +96,7 @@ function dineInAJAX(locationID) {
 
         var contentDiv = $("<div>");
         contentDiv.attr("class", "card-content");
-        var cardTitle = $("<a>").text(x + 1 + ". " + restaurantName);
+        var cardTitle = $("<a>").text(restaurantName);
         cardTitle.attr("href", restaurantURL);
         cardTitle.attr("target", "_blank");
         cardTitle.attr("class", "card-title");
@@ -115,7 +130,7 @@ function attractionAJAX(locationID) {
     async: true,
     crossDomain: true,
     url:
-      "https://tripadvisor1.p.rapidapi.com/attractions/list?sort=recommended&limit=20&location_id=" +
+      "https://tripadvisor1.p.rapidapi.com/attractions/list?sort=recommended&limit=16&location_id=" +
       locationID,
     method: "GET",
     headers: {
@@ -166,7 +181,7 @@ function attractionAJAX(locationID) {
         var addLink = $("<a>");
         addLink.attr(
           "class",
-          "btn-floating halfway-fab waves-effect waves-light red"
+          "btn-floating halfway-fab waves-effect waves-light green"
         );
         var addButton = $("<i>").attr("class", "material-icons");
         addButton.text("add");
@@ -175,7 +190,7 @@ function attractionAJAX(locationID) {
 
         var contentDiv = $("<div>");
         contentDiv.attr("class", "card-content");
-        var cardTitle = $("<a>").text(x + 1 + ". " + attractionName);
+        var cardTitle = $("<a>").text(attractionName);
         cardTitle.attr("href", attractionURL);
         cardTitle.attr("target", "_blank");
         cardTitle.attr("class", "card-title");
@@ -206,8 +221,16 @@ $("#restaurants-button").on("click", function(event) {
   cuisine = $("#cuisine").val();
   foodMethod = $("#method").val();
 
+  $("#address").val("");
+  $("#cuisine").val("");
+  $("#method").val("");
+  
+  if (address === "") {
+    $("#restaurants-div").text("Enter a city or address!");
+    return null;
+  }
   if (foodMethod === "") {
-    alert("Choose an option!");
+    $("#restaurants-div").text("Choose an option!");
     return null;
   } else if (foodMethod === "dine-in") {
     var settings = {
@@ -281,7 +304,7 @@ $("#restaurants-button").on("click", function(event) {
           var addLink = $("<a>");
           addLink.attr(
             "class",
-            "btn-floating halfway-fab waves-effect waves-light red"
+            "btn-floating halfway-fab waves-effect waves-light green"
           );
           var addButton = $("<i>").attr("class", "material-icons");
           addButton.text("add");
@@ -290,7 +313,7 @@ $("#restaurants-button").on("click", function(event) {
 
           var contentDiv = $("<div>");
           contentDiv.attr("class", "card-content");
-          var cardTitle = $("<a>").text(x + 1 + ". " + restaurantName);
+          var cardTitle = $("<a>").text(restaurantName);
           cardTitle.attr("href", restaurantURL);
           cardTitle.attr("target", "_blank");
           cardTitle.attr("class", "card-title");
@@ -331,6 +354,11 @@ $("#attractions-button").on("click", function(event) {
   $("#attractions-div").empty();
 
   var city = $("#attractions-city").val();
+  $("#attractions-city").val("");
+  if (city === "") {
+    $("#attractions-div").text("Enter a city!");
+    return null;
+  }
   var settings = {
     async: true,
     crossDomain: true,
@@ -354,6 +382,11 @@ $("#parks-button").on("click", function(event) {
   $("#parks-div").empty();
 
   var state = $("#state").val();
+  $("#state").val("");
+  if (state === "") {
+    $("#parks-div").text("Enter a state code!");
+    return null;
+  }
   var parksQueryURL =
     "https://developer.nps.gov/api/v1/parks?" +
     "api_key=wq73RLrCoU54B4jIoJVtJmciJfxwapJcl2GrnOQJ" +
@@ -382,7 +415,7 @@ $("#parks-button").on("click", function(event) {
       var parkDirectionsURL = result.directionsUrl;
       var parkDesc = result.description;
 
-      var parkTitle = $("<a>").text(i + 1 + ". " + parkName);
+      var parkTitle = $("<a>").text(parkName);
       parkTitle.attr("href", parkURL);
       parkTitle.attr("target", "_blank");
       parkDiv.append(parkTitle);
@@ -390,7 +423,7 @@ $("#parks-button").on("click", function(event) {
       var addLink = $("<a>");
       addLink.attr(
         "class",
-        "btn-floating btn-large waves-effect waves-light red right"
+        "btn-floating btn-large waves-effect waves-light green right"
       );
       var addButton = $("<i>").attr("class", "material-icons");
       addButton.text("add");
@@ -425,7 +458,17 @@ $("#events-button").on("click", function(event) {
   var startDateTime = moment(startDate).format("MMDDYYYY");
   var endDateTime = moment(endDate).format("MMDDYYYY");
   var APIKey = "BWNsZCTgpBPm9UMqEa9pb6aRAUobywTZ";
-
+  
+  $("#city").val("");
+  $("#event-type").val("");
+  $("#event-start-date").val("");
+  $("#event-end-date").val("");
+  
+  if (city === "") {
+    $("#events-div").text("Enter a city!");
+    return null;
+  }
+  
   var TMQueryURL =
     "https://app.ticketmaster.com/discovery/v2/events.json?" +
     "size=16" +
@@ -485,7 +528,7 @@ $("#events-button").on("click", function(event) {
           var addLink = $("<a>");
           addLink.attr(
             "class",
-            "btn-floating halfway-fab waves-effect waves-light red"
+            "btn-floating halfway-fab waves-effect waves-light green"
           );
           var addButton = $("<i>").attr("class", "material-icons");
           addButton.text("add");
@@ -494,7 +537,7 @@ $("#events-button").on("click", function(event) {
 
           var contentDiv = $("<div>");
           contentDiv.attr("class", "card-content");
-          var cardTitle = $("<a>").text(x + 1 + ". " + eventName);
+          var cardTitle = $("<a>").text(eventName);
           cardTitle.attr("href", eventURL);
           cardTitle.attr("target", "_blank");
           cardTitle.attr("class", "card-title");
@@ -530,14 +573,6 @@ $("#events-button").on("click", function(event) {
         }
         $("#events-div").append(rowDiv);
 
-        // $(".btn-floating").click(function() {
-        //   let text = $(this).children().text();
-        //       $(this).children().text(
-        //           text === "add" ? "close" : "add"
-        //       )
-        //    console.log($(this).children().text())
-        //   $(this).toggleClass("red green")
-        //       })
       }
     },
     error: function(xhr, status, err) {
@@ -546,12 +581,62 @@ $("#events-button").on("click", function(event) {
   });
 });
 
+function toggleButton (button) {
+  var text = button.textContent;
+  if (text === "add") {
+    button.textContent = "close";
+  }
+  else {
+    button.textContent = "add";
+  }
+  if (button.parentElement.classList.contains("red")) {
+    button.parentElement.classList.remove("red");
+    button.parentElement.classList.add("green");
+  }
+  else {
+    button.parentElement.classList.remove("green");
+    button.parentElement.classList.add("red");
+  }
+}
+
 $("#events-div").on("click", function(event) {
   event.preventDefault();
   if (event.target.matches("i")) {
     var eventName =
       event.target.parentElement.parentElement.nextElementSibling.children[0];
     addItem(eventName.textContent);
-    console.log(itinerary);
+    toggleButton(event.target);
   }
 });
+
+$("#restaurants-div").on("click", function(event) {
+  event.preventDefault();
+  if (event.target.matches("i")) {
+    var restaurantName =
+      event.target.parentElement.parentElement.nextElementSibling.children[0];
+    addItem(restaurantName.textContent);
+    toggleButton(event.target);
+  }
+});
+
+$("#attractions-div").on("click", function(event) {
+  event.preventDefault();
+  if (event.target.matches("i")) {
+    var attractionName =
+      event.target.parentElement.parentElement.nextElementSibling.children[0];
+    addItem(attractionName.textContent);
+    toggleButton(event.target);
+  }
+});
+
+$("#parks-div").on("click", function(event) {
+  event.preventDefault();
+  if (event.target.matches("i")) {
+    var parkName =
+      event.target.parentElement.previousElementSibling;
+    addItem(parkName.textContent);
+    toggleButton(event.target);
+  }
+});
+
+renderCart();
