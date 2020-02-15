@@ -79,6 +79,8 @@
         </li>
       </ul>  
    </section>
+  
+
 
          <!-- flightsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
 
@@ -91,59 +93,102 @@
             <div class="col s12 m4 z-depth-3 light-green accent-1">
                 <ul class="tabs light-green accent-1">
                     <li class="tab col s6">
-                         <a href="#round-trip" class="indigo-text text-darken-4">Round-trip</a>
+                         <a href="#round-trip" class="indigo-text text-darken-4 link">Round-trip</a>
                     </li>
                     <li class="tab col s6">
-                         <a href="#one-way" class="indigo-text text-darken-4">One-way</a>
+                         <a href="#one-way" class="indigo-text text-darken-4 link">One-way</a>
                     </li>
                 </ul> <br>
 
                 <div class="col s12 " id="one-way">
                     <div class="input-field">
                         <i class="material-icons prefix">flight_takeoff</i>
-                        <input type="text" class="fly black-text" placeholder="Fly from">
+                        <!-- <input type="text" id = "fly-from-one-way">
+                        <label for="" class="black-text">Fly from</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_land</i>
+                        <input type="text" id = "fly-to-one-way">
+                        <label for="" class="black-text">Fly to</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text" class="datepicker" id = "departing-one-way">
+                        <label for="" class="black-text">Departing</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text" id = "passenger-count-one">
+                        <label for="" class="black-text">Passengers</label>
+ -->
+
+                        <input type="text" class="fly black-text" id = "fly-from-one-way" placeholder="Fly from">
                         <!-- <label for="" class="black-text">Fly from</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">flight_land</i>
-                        <input type="text" class="fly" placeholder="Fly to">
+                        <input type="text" class="fly" id = "fly-to-one-way" placeholder="Fly to">
                         <!-- <label for="" class="black-text">Fly to</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">date_range</i>
-                        <input type="text" class="datepicker" placeholder="Departing">
+                        <input type="text" class="datepicker" id = "departing-one-way" placeholder="Departing">
                         <!-- <label for="" class="black-text">Departing</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">person</i>
-                        <input type="text" placeholder="Passengers">
+                        <input type="text" id = "passenger-count-one" placeholder="Passengers">
                         <!-- <label for="" class="black-text">Passengers</label> -->
                     </div>
                 </div> 
                 <div class="col s12" id="round-trip">
                     <div class="input-field">
                         <i class="material-icons prefix">flight_takeoff</i>
-                        <input type="text" class="fly black-text" placeholder="Fly from">
+                        <!-- <input type="text" id = "fly-from-round-trip">
+                        <label for="" class="black-text">Fly from</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_land</i>
+                        <input type="text" id = "fly-to-round-trip">
+                        <label for="" class="black-text">Fly to</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text" class="datepicker" id = "departing-round-trip">
+                        <label for="" class="black-text">Departing</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text"class="datepicker" id = "returning-round-trip">
+                        <label for="" class="black-text">Returning</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text" id = "passenger-count-round">
+                        <label for="" class="black-text">passengers</label> -->
+
+
+                        <input type="text" class="fly black-text" id = "fly-from-round-trip" placeholder="Fly from">
                         <!-- <label for="" class="black-text">Fly from</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">flight_land</i>
-                        <input type="text" class="fly" placeholder="Fly to">
+                        <input type="text" class="fly" id = "fly-to-round-trip" placeholder="Fly to">
                         <!-- <label for="" class="black-text">Fly to</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">date_range</i>
-                        <input type="text" class="datepicker" placeholder="Departing">
+                        <input type="text" class="datepicker" id = "departing-round-trip" placeholder="Departing">
                         <!-- <label for="" class="black-text">Departing</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">date_range</i>
-                        <input type="text"class="datepicker" placeholder="Returning">
+                        <input type="text"class="datepicker" id = "returning-round-trip" placeholder="Returning">
                         <!-- <label for="" class="black-text">Returning</label> -->
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">person</i>
-                        <input type="text" placeholder="passengers">
+                        <input type="text" id = "passenger-count-round" placeholder="passengers">
                         <!-- <label for="" class="black-text">passengers</label> -->
                     </div>
                 </div>
@@ -151,40 +196,25 @@
                             <input type="submit" class="btn large green" id="btn-flight">
                         </div>
             </div>
-
             <div class="col s12 m8">
-             
-                   <div class="row indigo accent-1 row-f">
-                        <!-- <div class="col s6">
-                            <div class="card red lighten-5">
-                              
-                                <div class="card-content" style="padding: 2%">
-                                    <p style="font-weight: 600;">Departing Date:</p>  
-                                    <p style="font-weight: 600;">Returning Date:</p>  
-                                    <p style="font-weight: 600;"> AirPort Name:</p>  
-                                    <p style="font-weight: 600;"> AirPort Location:</p>  
-                                    <p style="font-weight: 600;"> Price:</p>  
-                                 </div>
+            
+                <div class="row indigo accent-1 row-f">
+                    <div class="col s6 col-f">
+                        <div class="card red lighten-5" style="position: relative;">
+            
+                            <div class="card-content" style="padding: 2%;">
+                                <p style="font-weight: 700;">Departing:<span style="font-weight: 400;padding-left: 7px;"></span></p>
+                                <p style="font-weight: 700;">Returning:<span style="font-weight: 400;padding-left: 7px;"></span></p>
+                                <p style="font-weight: 700;">Airport:<span style="font-weight: 400;padding-left: 7px;"></span></p>
+                                <p style="font-weight: 700;">Location:<span style="font-weight: 400;padding-left: 7px;"></span></p>
+                                <p style="font-weight: 700;">Price:<span style="font-weight: 400;padding-left: 7px;"></span></p>
                             </div>
-                        </div> -->
-                       
-                        
-                        <div class="col s6 col-f">
-                            <div class="card red lighten-5" style="position: relative;">
-                             
-                                <div class="card-content" style="padding: 2%;">
-                                    <p style="font-weight: 700;">Departing:<span style="font-weight: 400;padding-left: 7px;"></span></p> 
-                                    <p style="font-weight: 700;">Returning:<span style="font-weight: 400;padding-left: 7px;"></span></p>  
-                                    <p style="font-weight: 700;">Airport:<span style="font-weight: 400;padding-left: 7px;"></span></p>  
-                                    <p style="font-weight: 700;">Location:<span style="font-weight: 400;padding-left: 7px;"></span></p>  
-                                    <p style="font-weight: 700;">Price:<span style="font-weight: 400;padding-left: 7px;"></span></p>  
-                                 </div>
-                                 <a class="right a-flight btn-floating btn-small green">
-                                    <i class="material-icons">add</i>
-                                  </a>
-                            </div>
+                            <a class="right a-flight btn-floating btn-small green">
+                                <i class="material-icons">add</i>
+                            </a>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </section>
@@ -334,33 +364,41 @@
          <div class="row " style="display:flex;">
              <div class="card-panel col s-12 m4">
                 <i class="material-icons">add_location</i>
-                 <input type="text" placeholder="Location">
+                 <input type="text" placeholder="Location" id = "location">
              </div>
              <div class="card-panel col s-12 m4">
                 <i class="material-icons">date_range</i>
-                 <input type="text" placeholder="Check-IN" class="datepicker">
+                 <input type="text" placeholder="Check-IN" class="datepicker" id = "check-in">
              </div>
              <div class="card-panel col s12 m4">
-                <i class="material-icons">date_range</i>       <input type="text" placeholder="Check-OUT" class="datepicker">
+                <i class="material-icons">date_range</i>       <input type="text" placeholder="Check-OUT" class="datepicker" id = "check-out">
              </div>
              <div class="card-panel col s12 m4">
-                <i class="material-icons">person</i>                 <input type="text" placeholder="Guests">
+                <i class="material-icons">person</i>                 <input type="text" placeholder="Guests" id = "guest-val">
              </div>
              <div class="card-panel col s12 m4">
-                <i class="material-icons">hotel</i>                 <input type="text" placeholder="Rooms">
+                <i class="material-icons">hotel</i>                 <input type="text" placeholder="Rooms" id = "room-val">
              </div>
             </div>
                  <div class="col s12 center">
-                    <button class="btn large deep-orange lighten-2 hoverable">Check Availability</button>
+                    <button class="btn large deep-orange lighten-2 hoverable" id = "hotel-submit">Check Availability</button>
+                    
                 </div>
+                
         </div>
-           
-</section>
+        <section>
+            <div id="results-hotel">      
+            </div>
+        </section>
+    </section>
+    
+
+
+
 
     <!-- Eventsssssssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
     <section id="events" class="section event-section center scrollspy" style="margin-top: 50px;padding: 0;">
-
-
+        
         <div class="section">
             <h1 class="center white-text">Event Time</h1>
         </div>
@@ -493,11 +531,6 @@
             </div>
         </section>
 
-           
-
-
-
-
         <section class="section-popular">
             <div class="container">
                 <div class="row">
@@ -512,6 +545,7 @@
                             </div>
                         </div>
                     </div>
+                   
                     <div class="col s12 m4">
                         <div class="card">
                             <div class="card-image">
@@ -540,8 +574,6 @@
     </section>
                         
                         
-        
-
 
 
     <!-- contaaaaaaaaaaaaaaaaaaaaacttttttttttttttttttttttttttttttttttttttttttttt -->
@@ -597,9 +629,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
-    <script src="assets/main.js"></script>
-    <script src="assets/javascript/script.js"></script>
     <script>
           function search() {
         let fly = document.querySelectorAll(".fly");
@@ -611,6 +640,8 @@
     }
     </script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIJIuzQlXkBtR77hdMVzAtvfkEtsV-2aY&input=airport&libraries=places&callback=search"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
     <script src="assets/main.js"></script>
+    <script src="assets/javascript/script.js"></script>
 </body>
 </html>
