@@ -42,7 +42,8 @@ $(document).ready(function() {
   $(".modal-footer").click(function(e) {
     e.preventDefault();
   });
-  storage();
+  // storage();
+  $(".row-f>:first-child").hide();
 });
 
 // Global Variables
@@ -54,8 +55,6 @@ let localStorageArr = [];
 let i = 0;
 
 // Global Actions
-
-$(".row-f>:first-child").hide();
 
 // Functions
 
@@ -172,7 +171,7 @@ function cardGeneratorHotel(array) {
     if (array[i].photo_count !== 0) {
       newImage.attr("src", array[i].photo.images.original.url);
     } else {
-      newImage.attr("src", " ");
+      newImage.attr("src", "https://source.unsplash.com/1600x900?resort");
     }
 
     let cardContentDiv = elementGenerator("div", "card-content");
@@ -290,11 +289,19 @@ function airportData(fromCode, toCode, beginningPeriod) {
 // AHMED FLIGHTS DATA GENERATION
 function cardGeneratorFlights(array1, array2) {
   $(".clone-results").empty();
+  $(".row-f>:first-child").show();
   for (let i = 0; i < array1.length; i++) {
-    $(".row-f>:first-child").show();
     let copy = $(".row-f>:first-child").clone(true);
+    if (!array1[i].depart_date) {
+      copy[0].firstElementChild.firstElementChild.children[0].children[0].textContent =
+        " ";
+    }
     copy[0].firstElementChild.firstElementChild.children[0].children[0].textContent =
       array1[i].depart_date;
+    if (!array1[i].return_date) {
+      copy[0].firstElementChild.firstElementChild.children[1].children[0].textContent =
+        " ";
+    }
     copy[0].firstElementChild.firstElementChild.children[1].children[0].textContent =
       array1[i].return_date;
     copy[0].firstElementChild.firstElementChild.children[2].children[0].textContent =
@@ -350,17 +357,17 @@ function floatingButtonHotel() {
 
 // Local Storage Function
 
-function storage() {
-  let store = localStorage.getItem("key");
-  if (!store) {
-    localStorage.setItem("key", JSON.stringify(localStorageArr));
-  } else {
-    localStorageArr = JSON.parse(localStorage.getItem("key"));
-    console.log(localStorageArr);
-
-    // $(".modal-items").append(localStorageArr[0]);
-  }
-}
+// function storage() {
+//   let store = localStorage.getItem("key");
+//   if (!store) {
+//     localStorage.setItem("key", JSON.stringify(localStorageArr));
+//   } else {
+//     localStorageArr = JSON.parse(localStorage.getItem("key"));
+//     console.log(localStorageArr);
+//     console.log(localStorageArr[0].text());
+//     // $(".modal-items").append(localStorageArr[0]);
+//   }
+// }
 
 // Event Listeners
 
@@ -515,26 +522,18 @@ $(".btn-floating").click(function() {
       .text()
   );
   $(this).toggleClass("red green");
-  // let parent = $(this)
-  //   .parent()
-  //   .parent();
-  let parent = event.target.parentElement.parentElement;
+  let parent = $(this)
+    .parent()
+    .parent();
   if (text === "add") {
     $(this).attr("data", i);
-    let cloned = parent.cloneNode(true);
-    // localStorageArr.push(cloned);
-    localStorage.setItem("key", JSON.stringify(cloned));
-    localGet = JSON.parse(localStorage.getItem("key"));
-
-    console.log(localGet);
-    // cloned.attr("data", i);
-    // // cloned.appendTo($(".modal-items"));
-    // localStorageArr.push(JSON.stringify(cloned));
-    // localStorage.setItem("key", JSON.stringify(localStorageArr));
-    // localStorageArr = JSON.parse(JSON.parse(localStorage.getItem("key")));
-    $(".modal-items").append(cloned);
-
-    // console.log(localStorageArr[0]);
+    let cloned = parent.clone();
+    console.log(cloned);
+    cloned.attr("data", i);
+    cloned.appendTo($(".modal-items"));
+    localStorageArr.push(cloned);
+    console.log(localStorageArr[0]);
+    localStorage.setItem("key", JSON.stringify(localStorageArr));
 
     i++;
   } else {
@@ -545,7 +544,6 @@ $(".btn-floating").click(function() {
 });
 
 $(document).on("click", ".hotel-btn", floatingButtonHotel);
-
 // $(document).ready(function(){
 //     // styling html
 //     const sideNav = document.querySelector(".sidenav");
