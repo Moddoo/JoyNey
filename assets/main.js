@@ -42,8 +42,6 @@ $(document).ready(function() {
   $(".modal-footer").click(function(e) {
     e.preventDefault();
   });
-  // storage();
-  $(".row-f>:first-child").hide();
 });
 
 // Global Variables
@@ -51,10 +49,11 @@ let codeFrom, codeTo;
 let emptyFlightsArr = [];
 let emptyHotelArr = [];
 let emptyAirportArr = [];
-let localStorageArr = [];
 let i = 0;
 
 // Global Actions
+
+$(".row-f>:first-child").hide();
 
 // Functions
 
@@ -171,7 +170,7 @@ function cardGeneratorHotel(array) {
     if (array[i].photo_count !== 0) {
       newImage.attr("src", array[i].photo.images.original.url);
     } else {
-      newImage.attr("src", "https://source.unsplash.com/1600x900?resort");
+      newImage.attr("src", " ");
     }
 
     let cardContentDiv = elementGenerator("div", "card-content");
@@ -190,7 +189,7 @@ function cardGeneratorHotel(array) {
     );
     let linkButton = elementGenerator(
       "a",
-      "btn-floating hotel-btn halfway-fab waves-effect waves-light green"
+      "btn-floating hotel-btn halfway-fab waves-effect waves-light red"
     );
     let iAdd = elementGenerator("i", "material-icons", "", "add");
     linkButton.append(iAdd);
@@ -289,19 +288,11 @@ function airportData(fromCode, toCode, beginningPeriod) {
 // AHMED FLIGHTS DATA GENERATION
 function cardGeneratorFlights(array1, array2) {
   $(".clone-results").empty();
-  $(".row-f>:first-child").show();
   for (let i = 0; i < array1.length; i++) {
+    $(".row-f>:first-child").show();
     let copy = $(".row-f>:first-child").clone(true);
-    if (!array1[i].depart_date) {
-      copy[0].firstElementChild.firstElementChild.children[0].children[0].textContent =
-        " ";
-    }
     copy[0].firstElementChild.firstElementChild.children[0].children[0].textContent =
       array1[i].depart_date;
-    if (!array1[i].return_date) {
-      copy[0].firstElementChild.firstElementChild.children[1].children[0].textContent =
-        " ";
-    }
     copy[0].firstElementChild.firstElementChild.children[1].children[0].textContent =
       array1[i].return_date;
     copy[0].firstElementChild.firstElementChild.children[2].children[0].textContent =
@@ -354,20 +345,6 @@ function floatingButtonHotel() {
     $(".modal-items div[data = " + data + "]").remove();
   }
 }
-
-// Local Storage Function
-
-// function storage() {
-//   let store = localStorage.getItem("key");
-//   if (!store) {
-//     localStorage.setItem("key", JSON.stringify(localStorageArr));
-//   } else {
-//     localStorageArr = JSON.parse(localStorage.getItem("key"));
-//     console.log(localStorageArr);
-//     console.log(localStorageArr[0].text());
-//     // $(".modal-items").append(localStorageArr[0]);
-//   }
-// }
 
 // Event Listeners
 
@@ -527,14 +504,10 @@ $(".btn-floating").click(function() {
     .parent();
   if (text === "add") {
     $(this).attr("data", i);
-    let cloned = parent.clone();
-    console.log(cloned);
-    cloned.attr("data", i);
-    cloned.appendTo($(".modal-items"));
-    localStorageArr.push(cloned);
-    console.log(localStorageArr[0]);
-    localStorage.setItem("key", JSON.stringify(localStorageArr));
-
+    parent
+      .clone()
+      .attr("data", i)
+      .appendTo($(".modal-items"));
     i++;
   } else {
     let data = $(this).attr("data");
