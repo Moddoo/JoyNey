@@ -10,7 +10,7 @@ var eatStreetAPIKey = "1e04ce32b770452a";
 var tripAdvisorAPIKey = "10701e6cc9msh93b8b8858829b24p16c255jsncff566ba3db6";
 var itinerary = [];
 
-function renderCart () {
+function renderCart() {
   $(".modal-content").empty();
   var itineraryString = localStorage.getItem("itinerary");
   if (itineraryString !== null) {
@@ -224,7 +224,7 @@ $("#restaurants-button").on("click", function(event) {
   $("#address").val("");
   $("#cuisine").val("");
   $("#method").val("");
-  
+
   if (address === "") {
     $("#restaurants-div").text("Enter a city or address!");
     return null;
@@ -458,17 +458,17 @@ $("#events-button").on("click", function(event) {
   var startDateTime = moment(startDate).format("MMDDYYYY");
   var endDateTime = moment(endDate).format("MMDDYYYY");
   var APIKey = "BWNsZCTgpBPm9UMqEa9pb6aRAUobywTZ";
-  
+
   $("#city").val("");
   $("#event-type").val("");
   $("#event-start-date").val("");
   $("#event-end-date").val("");
-  
+
   if (city === "") {
     $("#events-div").text("Enter a city!");
     return null;
   }
-  
+
   var TMQueryURL =
     "https://app.ticketmaster.com/discovery/v2/events.json?" +
     "size=16" +
@@ -572,7 +572,6 @@ $("#events-button").on("click", function(event) {
           rowDiv.append(colDiv);
         }
         $("#events-div").append(rowDiv);
-
       }
     },
     error: function(xhr, status, err) {
@@ -581,19 +580,17 @@ $("#events-button").on("click", function(event) {
   });
 });
 
-function toggleButton (button) {
+function toggleButton(button) {
   var text = button.textContent;
   if (text === "add") {
     button.textContent = "close";
-  }
-  else {
+  } else {
     button.textContent = "add";
   }
   if (button.parentElement.classList.contains("red")) {
     button.parentElement.classList.remove("red");
     button.parentElement.classList.add("green");
-  }
-  else {
+  } else {
     button.parentElement.classList.remove("green");
     button.parentElement.classList.add("red");
   }
@@ -632,11 +629,10 @@ $("#attractions-div").on("click", function(event) {
 $("#parks-div").on("click", function(event) {
   event.preventDefault();
   if (event.target.matches("i")) {
-    var parkName =
-      event.target.parentElement.previousElementSibling;
+    var parkName = event.target.parentElement.previousElementSibling;
     addItem(parkName.textContent);
     toggleButton(event.target);
   }
 });
 
-renderCart();
+// renderCart();
