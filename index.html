@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Permanent+Marker|Righteous|Sriracha&display=swap&subset=thai" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
-<body id="home" class="scrollspy"> 
+<body id="home" class="scrollspy">
 
     <!-- naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaav -->
 
@@ -39,9 +39,9 @@
            <li><a href="#hotels" class="black-text">Hotels</a></li>
            <li><a href="#flights" class="black-text">Flights</a></li>
            <li><a href="#contact" class="black-text">Contact</a></li>
-           <li><a href="" class=""><i class="fa fa-shopping-cart"></i></a></li>
+           <li><a href="#cart" class="modal-trigger"><i class="fa fa-shopping-cart"></i></a></li>
         </ul>
-        <div class="modal" id="cart">
+        <div class="modal" id="cart" style="top:0 !important;min-height: 5000vh !important; overflow: auto;left: 0 !important;">
             <div class="modal-content">
                 <h3 class="indigo">items</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti dolorum facere perspiciatis! Dignissimos voluptate nobis ut! Corporis deleniti provident ipsa, magni aspernatur doloremque vel in? Cupiditate eveniet dicta nisi!</p>
@@ -103,7 +103,7 @@
                 <div class="col s12 " id="one-way">
                     <div class="input-field">
                         <i class="material-icons prefix">flight_takeoff</i>
-                        <input type="text" id = "fly-from-one-way">
+                        <!-- <input type="text" id = "fly-from-one-way">
                         <label for="" class="black-text">Fly from</label>
                     </div>
                     <div class="input-field">
@@ -120,12 +120,31 @@
                         <i class="material-icons prefix">person</i>
                         <input type="text" id = "passenger-count-one">
                         <label for="" class="black-text">Passengers</label>
+ -->
+
+                        <input type="text" class="fly black-text" id = "fly-from-one-way" placeholder="Fly from">
+                        <!-- <label for="" class="black-text">Fly from</label> -->
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_land</i>
+                        <input type="text" class="fly" id = "fly-to-one-way" placeholder="Fly to">
+                        <!-- <label for="" class="black-text">Fly to</label> -->
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text" class="datepicker" id = "departing-one-way" placeholder="Departing">
+                        <!-- <label for="" class="black-text">Departing</label> -->
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text" id = "passenger-count-one" placeholder="Passengers">
+                        <!-- <label for="" class="black-text">Passengers</label> -->
                     </div>
                 </div> 
                 <div class="col s12" id="round-trip">
                     <div class="input-field">
                         <i class="material-icons prefix">flight_takeoff</i>
-                        <input type="text" id = "fly-from-round-trip">
+                        <!-- <input type="text" id = "fly-from-round-trip">
                         <label for="" class="black-text">Fly from</label>
                     </div>
                     <div class="input-field">
@@ -146,7 +165,31 @@
                     <div class="input-field">
                         <i class="material-icons prefix">person</i>
                         <input type="text" id = "passenger-count-round">
-                        <label for="" class="black-text">passengers</label>
+                        <label for="" class="black-text">passengers</label> -->
+
+
+                        <input type="text" class="fly black-text" id = "fly-from-round-trip" placeholder="Fly from">
+                        <!-- <label for="" class="black-text">Fly from</label> -->
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">flight_land</i>
+                        <input type="text" class="fly" id = "fly-to-round-trip" placeholder="Fly to">
+                        <!-- <label for="" class="black-text">Fly to</label> -->
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text" class="datepicker" id = "departing-round-trip" placeholder="Departing">
+                        <!-- <label for="" class="black-text">Departing</label> -->
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text"class="datepicker" id = "returning-round-trip" placeholder="Returning">
+                        <!-- <label for="" class="black-text">Returning</label> -->
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text" id = "passenger-count-round" placeholder="passengers">
+                        <!-- <label for="" class="black-text">passengers</label> -->
                     </div>
                 </div>
                         <div class="input-field col s12 center">
@@ -283,9 +326,9 @@
 <!-- videooooooooooooooooooooooooooooooooooooooooooo -->
 <div class="row center video">
     <div class="col s12 "style="position:absolute; height: 100%;">
-        <iframe id="frame" width="60%" height="85%" src="https://www.youtube.com/embed/SSqgaFE9igo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="frame" width="60%" height="82%" src="https://www.youtube.com/embed/SSqgaFE9igo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="col s6 offset-s3 offset-l4  vid">
+    <div class="col s6 offset-s3 offset-l4 vid">
         <div class="card vid-img">
             <div class="card-image col s2">
                <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="" style="margin-top: 8px;">
@@ -293,7 +336,7 @@
         </div>
         <div class="card vid-img">
             <div class="card-image col s2">
-               <img src="img.png" alt="">
+               <img src="https://images.unsplash.com/photo-1580223530509-849e0ad583ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
             </div>
         </div>
         <div class="card vid-img">
@@ -394,16 +437,17 @@
                 <div class="col s12" id="events-div"></div>
             </div>
         </div>
-        
-        <section id="activities">
+    </section>
+
+        <section id="activities" class="center">
             <div class="container activities">
                 <h4>Search for Activities on Your Joyney</h4>
                 <div class="row">
                     <div class="col s12">
                     <ul class="tabs">
-                        <li class="tab col s3"><a class="active" href="#restaurants">Dining</a></li>
-                        <li class="tab col s3"><a href="#attractions">Attractions</a></li>
-                        <li class="tab col s3"><a href="#parks">Parks</a></li>
+                        <li class="tab col s4"><a class="active" href="#restaurants">Dining</a></li>
+                        <li class="tab col s4"><a href="#attractions">Attractions</a></li>
+                        <li class="tab col s4"><a href="#parks">Parks</a></li>
                     </ul>
                     </div>
                     <div id="restaurants" class="col s12">
