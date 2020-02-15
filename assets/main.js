@@ -39,6 +39,10 @@ $(document).ready(function() {
   vid[3].addEventListener("click", function video() {
     frame.src = "https://www.youtube.com/embed/WiJubHinH8Y";
   });
+  $(".modal-footer").click(function(e) {
+    e.preventDefault();
+  });
+  storage();
 });
 
 // Global Variables
@@ -46,6 +50,8 @@ let codeFrom, codeTo;
 let emptyFlightsArr = [];
 let emptyHotelArr = [];
 let emptyAirportArr = [];
+let localStorageArr = [];
+let i = 0;
 
 // Global Actions
 
@@ -154,8 +160,9 @@ function hotelDetails(id) {
 // AHMED HOTEL DATA GENERATION
 function cardGeneratorHotel(array) {
   $("#results-hotel").empty();
-
+  let rowDiv = elementGenerator("div", "row");
   for (let i = 0; i < array.length; i++) {
+    let colDiv = elementGenerator("div", "col s6 m3");
     let cardDiv = elementGenerator("div", "card card-hotel");
     let imageContainerDiv = elementGenerator(
       "div",
@@ -165,9 +172,9 @@ function cardGeneratorHotel(array) {
     if (array[i].photo_count !== 0) {
       newImage.attr("src", array[i].photo.images.original.url);
     } else {
-      newImage.attr("src", "");
+      newImage.attr("src", " ");
     }
-    imageContainerDiv.append(newImage);
+
     let cardContentDiv = elementGenerator("div", "card-content");
     let spanCardContent = elementGenerator(
       "span",
@@ -184,11 +191,12 @@ function cardGeneratorHotel(array) {
     );
     let linkButton = elementGenerator(
       "a",
-      "btn-floating halfway-fab waves-effect waves-light red"
+      "btn-floating hotel-btn halfway-fab waves-effect waves-light green"
     );
     let iAdd = elementGenerator("i", "material-icons", "", "add");
     linkButton.append(iAdd);
-    spanCardContent.append(linkButton, iMoreVert);
+    spanCardContent.append(iMoreVert);
+    imageContainerDiv.append(linkButton, newImage);
     let cardRevealDiv = elementGenerator("div", "card-reveal");
     let spanCardReveal = elementGenerator(
       "span",
@@ -219,8 +227,10 @@ function cardGeneratorHotel(array) {
     cardRevealDiv.append(spanCardReveal, ratingDiv, priceDiv, descriptionDiv);
     cardDiv.append(imageContainerDiv, cardContentDiv, cardRevealDiv);
 
-    $("#results-hotel").append(cardDiv);
+    colDiv.append(cardDiv);
+    rowDiv.append(colDiv);
   }
+  $("#results-hotel").append(rowDiv);
 }
 
 function airportData(fromCode, toCode, beginningPeriod) {
@@ -279,6 +289,7 @@ function airportData(fromCode, toCode, beginningPeriod) {
 
 // AHMED FLIGHTS DATA GENERATION
 function cardGeneratorFlights(array1, array2) {
+  $(".clone-results").empty();
   for (let i = 0; i < array1.length; i++) {
     $(".row-f>:first-child").show();
     let copy = $(".row-f>:first-child").clone(true);
@@ -300,9 +311,55 @@ function cardGeneratorFlights(array1, array2) {
       array2[0].postal_code;
     copy[0].firstElementChild.firstElementChild.children[4].children[0].textContent =
       "$" + array1[i].value;
-    copy.appendTo($(".row-f"));
+    copy.appendTo($(".clone-results"));
   }
   $(".row-f>:first-child").hide();
+}
+
+function floatingButtonHotel() {
+  let text = $(this)
+    .children()
+    .text();
+  $(this)
+    .children()
+    .text(text === "add" ? "close" : "add");
+  console.log(
+    $(this)
+      .children()
+      .text()
+  );
+  $(this).toggleClass("red green");
+  let parent = $(this)
+    .parent()
+    .parent()
+    .parent();
+  console.log(parent);
+  if (text === "add") {
+    $(this).attr("data", i);
+    parent
+      .clone()
+      .attr("data", i)
+      .removeClass("m3")
+      .appendTo($(".modal-items"));
+    i++;
+  } else {
+    let data = $(this).attr("data");
+    $(".modal-items div[data = " + data + "]").remove();
+  }
+}
+
+// Local Storage Function
+
+function storage() {
+  let store = localStorage.getItem("key");
+  if (!store) {
+    localStorage.setItem("key", JSON.stringify(localStorageArr));
+  } else {
+    localStorageArr = JSON.parse(localStorage.getItem("key"));
+    console.log(localStorageArr);
+
+    // $(".modal-items").append(localStorageArr[0]);
+  }
 }
 
 // Event Listeners
@@ -448,6 +505,7 @@ $(".btn-floating").click(function() {
   let text = $(this)
     .children()
     .text();
+
   $(this)
     .children()
     .text(text === "add" ? "close" : "add");
@@ -457,7 +515,37 @@ $(".btn-floating").click(function() {
       .text()
   );
   $(this).toggleClass("red green");
+  // let parent = $(this)
+  //   .parent()
+  //   .parent();
+  let parent = event.target.parentElement.parentElement;
+  if (text === "add") {
+    $(this).attr("data", i);
+    let cloned = parent.cloneNode(true);
+    // localStorageArr.push(cloned);
+    localStorage.setItem("key", JSON.stringify(cloned));
+    localGet = JSON.parse(localStorage.getItem("key"));
+
+    console.log(localGet);
+    // cloned.attr("data", i);
+    // // cloned.appendTo($(".modal-items"));
+    // localStorageArr.push(JSON.stringify(cloned));
+    // localStorage.setItem("key", JSON.stringify(localStorageArr));
+    // localStorageArr = JSON.parse(JSON.parse(localStorage.getItem("key")));
+    $(".modal-items").append(cloned);
+
+    // console.log(localStorageArr[0]);
+
+    i++;
+  } else {
+    let data = $(this).attr("data");
+    console.log(data);
+    $(".modal-items div[data = " + data + "]").remove();
+  }
 });
+
+$(document).on("click", ".hotel-btn", floatingButtonHotel);
+
 // $(document).ready(function(){
 //     // styling html
 //     const sideNav = document.querySelector(".sidenav");

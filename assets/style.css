@@ -394,11 +394,20 @@ ul li a {
   display: none;
 }
 
-.card-hotel {
-  height: 400px;
-  width: 300px;
-}
+/* .card-hotel {
+  height: 300px;
+  width: 200px;
+} */
 
 .error-div {
   color: red;
+}
+
+.hotel-btn {
+  top: 20px;
+}
+
+.activator {
+  height: 175px;
+  object-fit: cover;
 }
