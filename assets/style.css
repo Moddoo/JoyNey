@@ -1,175 +1,251 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html{
-    scroll-behavior: smooth;
+.mt-0{
+   margin-top: 0;
 }
-nav::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left:0;
-    background: repeating-linear-gradient(to right, rgb(22, 12, 170),rgb(233, 98, 7));
-    width: 100%;
-    height: 100%;
-    opacity: 0.7;
-    filter: invert(200%) sepia();
-    z-index: -1;
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
-.hov:hover{
-    color: blanchedalmond !important;
-    /* background: linear-gradient(90deg,green,rgb(87, 87, 1)) !important; */
-    background: linear-gradient(90deg,rgb(30, 185, 30),rgb(41, 25, 5)) !important;
-    transition: 0.5s;
-} 
- .brand-logo{ 
-    font-weight:600 ;
-    margin: 0;
+nav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: repeating-linear-gradient(
+    to right,
+    rgb(22, 12, 170),
+    rgb(233, 98, 7)
+  );
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  filter: invert(200%) sepia();
+  z-index: -1;
 }
-ul li a{
-    font-size: 20px;
+.hov:hover {
+  color: blanchedalmond !important;
+  background: linear-gradient(
+    90deg,
+    rgb(30, 185, 30),
+    rgb(41, 25, 5)
+  ) !important;
+  transition: 0.5s;
 }
-.cart{
-    font-size: 25px !important;
-    color: white;
-    /* pointer-events: none !important; */
+nav ul a:hover{
+  background-color: transparent;
 }
-.li:hover{
-    transform: scale(1.2,1.2);
-    transition: 0.1s;
-    cursor: pointer;
- }
-.section-follow i{
-    margin: 0 5px;
+.brand-logo {
+  font-weight: 600;
+  margin: 0;
 }
-.section-flight h2{
-    font-size: 50px;
-    font-weight: 700;
-    color: rgb(31, 92, 224);
-    font-family: 'Dancing Script', cursive;
+ul li a {
+  font-size: 20px;
 }
-.section-flight li{
-    position: absolute !important;
-    top: -40px !important;
+.cart {
+  font-size: 25px !important;
+  color: white;
+  /* pointer-events: none !important; */
 }
-.a-flight{
-    position: absolute;
-    top: 5px;
-    right: 5px;
+.li:hover {
+  transform: scale(1.2, 1.2);
+  transition: 0.1s;
+  cursor: pointer;
 }
-.plane{
-    margin: 6px;
-    font-size: 50px;
+.modal-footer {
+  position: absolute;
+  bottom: -50px;
+  margin-top: 5px;
+  background-color: transparent;
 }
-.tabs .tab a:focus{
-    background-color: transparent !important;
+/* nav ul a:hover */
+.section-follow i {
+  margin: 0 5px;
+}
+.section-flight h2 {
+  font-size: 50px;
+  font-weight: 700;
+  color: rgb(31, 92, 224);
+  font-family: "Dancing Script", cursive;
+}
+.section-flight li {
+  position: absolute !important;
+  top: -40px !important;
+}
+.a-flight {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.plane {
+  margin: 6px;
+  font-size: 50px;
+}
+.tabs .tab a:focus {
+  background-color: transparent !important;
 }
 
-#flights{
-    margin: 0;
-    padding-top: 40px;
+#flights {
+  margin: 0;
+  padding-top: 40px;
 }
-#flights .section{
-    background-image: url(https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
-    background-repeat: no-repeat;
-    background-size: cover;
+#flights .section {
+  background-image: url(https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  height: 30vh;
+  margin-bottom: 15px;
+  background-position: center;
+}
+#flights .section h1 {
+  font-weight: 900;
+  color: rgb(255, 225, 225) !important;
+  font-family: "Righteous", cursive;
+  text-shadow: 2px 2px 20px black;
+}
+#flights .section h5 {
+  color: white;
+  text-shadow: 5px 3px 10px black;
+}
+.materialboxed{
+  padding: 10px;
+}
+#hotels {
+  padding: 0;
+  position: relative;
+}
+#hotels .section {
+  background-image: url(https://images.unsplash.com/photo-1439130490301-25e322d88054?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  height: 550px !important;
+}
+#hotels .section h1 {
+  font-weight: 700;
+  color: rgb(255, 225, 225) !important;
+  font-family: "Righteous", cursive;
+  text-shadow: 2px 2px 20px black;
+}
+#hotels .section1 {
+  /* background-color: rgb(240, 229, 133); */
+  width: 60vw;
+  height: 100%;
+  position: relative;
+  z-index: 2 !important;
+  top: -120px;
+  left: 20%;
+  display: block;
+  padding: 20px;
+}
+#hotels .boton{
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+#events .section {
+  background-image: url(https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  background-position: bottom;
+  height: 60vh !important;
+}
+#events .section h1 {
+  font-weight: 700;
+  color: rgb(201, 201, 201) !important;
+  font-family: "Righteous", cursive;
+  text-shadow: 2px 2px 20px black;
+}
+#search input {
+  padding: 0 20px;
+}
+
+#activities .card, #events .card {
+    height: 400px;
+    overflow: hidden;
+}
+
+#activities .card:hover, #events .card:hover {
+    overflow: auto;
+}
+
+#activities .card-image img, #events .card-image img {
+    height: 150px;
     object-fit: cover;
-    height: 30vh;
-    margin-bottom: 15px;
 }
-#flights .section h1{
-    font-weight: 900;
-    color: rgb(255, 225, 225) !important;
-    font-family: 'Righteous', cursive;
-    text-shadow: 2px 2px 20px black;
+
+#activities .card-title, #events .card-title {
+    font-size: 20px !important;
+    line-height: 24px !important;
+    font-weight: bold !important;
 }
-#flights .section h5{
-    color: white;
-    text-shadow: 5px 3px 10px black;
+
+#activities .card-content, #events .card-content {
+    text-align: left;
 }
-#hotels{
-    padding: 0;
-    position: relative;
+
+.input-field input::-webkit-input-placeholder {
+  color: black;
+  font-weight: 400;
 }
-#hotels .section{
-    background-image: url(https://images.unsplash.com/photo-1439130490301-25e322d88054?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
-    height: 550px!important;
+.video {
+  position: relative;
+  height: 80vh;
+  margin: 10px;
 }
-#hotels .section h1{
-    font-weight: 700;
-    color: rgb(255, 225, 225) !important;
-    font-family: 'Righteous', cursive;
-    text-shadow: 2px 2px 20px black;
+.vid {
+  position: absolute;
+  padding-left: 3vw;
+  bottom: 60px;
+  height: 3.3vh;
+  margin-bottom: 7px;
 }
-#hotels .section1{
-    /* background-color: rgb(240, 229, 133); */
-    width: 55vw;
-    height: 200px;
-    position: relative;
-    z-index: 2 !important;
-    top: -100px;
-    left:25%;
-    display: block;
-    padding: 20px;
+.vid-img {
+  width: 600px;
+  opacity: 0.7;
+  transition: 0.5s;
 }
-#events .section{
-    background-image: url(https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
-    background-position: bottom;
-    height: 60vh !important;
+.vid-img:hover {
+  cursor: pointer;
+  width: 800px;
+  opacity: 1;
 }
-#events .section h1{
-    font-weight: 700;
-    color: rgb(201, 201, 201) !important;
-    font-family: 'Righteous', cursive;
-    text-shadow: 2px 2px 20px black;
-}
-#search input{
-      padding: 0 20px;
-}
-.input-field input::-webkit-input-placeholder{
-    color: black;
-    font-weight: 400;
-}
-.video{
-    position: relative;
-    height:80vh;
-    margin: 10px
-}
-.vid{
-    position: absolute;
-    padding-left: 3vw;
-    bottom: 60px;
-    height: 3.3vh;
-    margin-bottom: 7px;
-}
-.vid-img{
-    width: 600px;
-    opacity: 0.7;
-    transition: 0.5s;
-}
-.vid-img:hover{
-     cursor: pointer;
-     width: 800px;
-     opacity: 1;
+.form .input-field textarea::placeholder {
+  color: black;
 }
 @media (max-width: 800px) {
-    .vid-img{
-        width: 70vw;
-        opacity: 0.6;
-        transition: 0.5s;
-    }
-    .vid-img:hover{
-        width: 90vw;
-    }
+  .vid-img {
+    width: 70vw;
+    opacity: 0.6;
+    transition: 0.5s;
+  }
+  .vid-img:hover {
+    width: 90vw;
+  }
 }
-.d-none{
-    display: none;
+.d-none {
+  display: none;
+}
+
+/* .card-hotel {
+  height: 300px;
+  width: 200px;
+} */
+
+.error-div {
+  color: red;
+}
+
+.hotel-btn {
+  top: 20px;
+}
+
+.activator {
+  height: 175px;
+  object-fit: cover;
 }
