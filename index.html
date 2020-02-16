@@ -21,7 +21,7 @@
                <div class="nav-wrapper">
                 <a href="#home" class="brand-logo black-text">&#x0134;0&#x0176;&#x019D;&#xc8;&#x2144;</a>
                 <a href="#" data-target="mobile-nav" class="sidenav-trigger">
-                    <i class="material-icons">&#x2630;</i>
+                    <i class="material-icons black-text">&#x2630;</i>
                 </a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#events" class="black-text hov">Events</a></li>
@@ -41,17 +41,18 @@
            <li><a href="#contact" class="black-text">Contact</a></li>
            <li><a href="#cart" class="modal-trigger"><i class="fa fa-shopping-cart"></i></a></li>
         </ul>
-        <div class="modal" id="cart" style="height: 1000vh; top:0 !important; overflow: auto;left: 0 !important;">
+        <div class="modal" id="cart" style="overflow: auto;">
             <div class="modal-content">
-                
+
             </div>
-            <div class="row modal-items">
-            
-            </div>
-            <div class="modal-footer">
-                <a href="" class="modal-close btn red">Close</a>
+            <div class="row modal-items" style="position: relative;">
+                <div class="modal-footer" style="position: absolute;bottom: -50px;margin-top: 5px;">
+                     <a href="" class="modal-close btn red">Close</a>
+                </div>
             </div>
         </div>
+                    
+                
 
 
    <!-- sliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiider -->
@@ -88,7 +89,7 @@
 
     <section class="section #fce4ec pink lighten-5 z-depth-5" id="flights">
         <div class="section">
-            <h1 class="center" >Let's wing it</h1>
+            <h1 class="center mt-0">Let's wing it</h1>
                 <h5 class="center">Book a Hot Rate ® Flight and save today!</h5>
         </div>
         <div class="row">
@@ -105,25 +106,6 @@
                 <div class="col s12 " id="one-way">
                     <div class="input-field">
                         <i class="material-icons prefix">flight_takeoff</i>
-                        <!-- <input type="text" id = "fly-from-one-way">
-                        <label for="" class="black-text">Fly from</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">flight_land</i>
-                        <input type="text" id = "fly-to-one-way">
-                        <label for="" class="black-text">Fly to</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">date_range</i>
-                        <input type="text" class="datepicker" id = "departing-one-way">
-                        <label for="" class="black-text">Departing</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">person</i>
-                        <input type="text" id = "passenger-count-one">
-                        <label for="" class="black-text">Passengers</label>
- -->
-
                         <input type="text" class="fly black-text" id = "fly-from-one-way" placeholder="Fly from">
                         <!-- <label for="" class="black-text">Fly from</label> -->
                     </div>
@@ -146,30 +128,6 @@
                 <div class="col s12" id="round-trip">
                     <div class="input-field">
                         <i class="material-icons prefix">flight_takeoff</i>
-                        <!-- <input type="text" id = "fly-from-round-trip">
-                        <label for="" class="black-text">Fly from</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">flight_land</i>
-                        <input type="text" id = "fly-to-round-trip">
-                        <label for="" class="black-text">Fly to</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">date_range</i>
-                        <input type="text" class="datepicker" id = "departing-round-trip">
-                        <label for="" class="black-text">Departing</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">date_range</i>
-                        <input type="text"class="datepicker" id = "returning-round-trip">
-                        <label for="" class="black-text">Returning</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">person</i>
-                        <input type="text" id = "passenger-count-round">
-                        <label for="" class="black-text">passengers</label> -->
-
-
                         <input type="text" class="fly black-text" id = "fly-from-round-trip" placeholder="Fly from">
                         <!-- <label for="" class="black-text">Fly from</label> -->
                     </div>
@@ -258,61 +216,61 @@
     <div class="container">
         <h4 class="center blue-text">Moments</h4>
         <div class="row">
-            <div class="col s12 m3">
+            <div class="col s6 m3">
                 <img src="https://source.unsplash.com/1600x900?resort" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3">
+            <div class="col s6 m3">
                 <img src="https://source.unsplash.com/1600x900?beach" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3">
+            <div class="col s6 m3">
                 <img src="https://source.unsplash.com/1600x900?desert" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3">
+            <div class="col s6 m3">
                 <img src="https://source.unsplash.com/1600x900?ice" alt="" class="materialboxed responsive-img">
             </div>
         </div>
 
         <div class="row">
-            <div class="col s12 m3 z-depth-">
+            <div class="col s6 m3 z-depth-">
                 <img src="https://source.unsplash.com/1600x900?building" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3">
+            <div class="col s6 m3">
                 <img src="https://source.unsplash.com/1600x900?trees" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3">
+            <div class="col s6 m3">
                 <img src="https://source.unsplash.com/1600x900?pets" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3">
+            <div class="col s6 m3">
                 <img src="https://source.unsplash.com/1600x900?nature" alt="" class="materialboxed responsive-img">
             </div>
         </div>
 
         <div class="row">
-            <div class="col s12 m3">
+            <div class="col s6 m3">
                 <img src="https://source.unsplash.com/1600x900?bikes" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3 z-depth-">
+            <div class="col s6 m3 z-depth-">
                 <img src="https://source.unsplash.com/1600x900?cars" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3 z-depth-">
+            <div class="col s6 m3 z-depth-">
                 <img src="https://source.unsplash.com/1600x900?camp" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3 z-depth-">
+            <div class="col s6 m3 z-depth-">
                 <img src="https://source.unsplash.com/1600x900?cruise" alt="" class="materialboxed responsive-img">
             </div>
         </div>
 
         <div class="row">
-            <div class="col s12 m3 z-depth-">
+            <div class="col s6 m3 z-depth-">
                 <img src="https://source.unsplash.com/1600x900?hotels" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3 z-depth-">
+            <div class="col s6 m3 z-depth-">
                 <img src="https://source.unsplash.com/1600x900?space" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3 z-depth-">
+            <div class="col s6 m3 z-depth-">
                 <img src="https://source.unsplash.com/1600x900?sun" alt="" class="materialboxed responsive-img">
             </div>
-            <div class="col s12 m3 z-depth-">
+            <div class="col s6 m3 z-depth-">
                 <img src="https://source.unsplash.com/1600x900?water-fall" alt="" class="materialboxed responsive-img">
             </div>
         </div>
@@ -363,30 +321,34 @@
         </h1>
     </div>
     <div class="section1 green lighten-1 z-depth-3">
-        <h5 class="center">Book NOW</h5>
-         <div class="row " style="display:flex;">
-             <div class="card-panel col s-12 m4">
-                <i class="material-icons">add_location</i>
-                 <input type="text" placeholder="Location" id = "location">
-             </div>
-             <div class="card-panel col s-12 m4">
-                <i class="material-icons">date_range</i>
-                 <input type="text" placeholder="Check-IN" class="datepicker" id = "check-in">
-             </div>
-             <div class="card-panel col s12 m4">
-                <i class="material-icons">date_range</i>       <input type="text" placeholder="Check-OUT" class="datepicker" id = "check-out">
-             </div>
-             <div class="card-panel col s12 m4">
-                <i class="material-icons">person</i>                 <input type="text" placeholder="Guests" id = "guest-val">
-             </div>
-             <div class="card-panel col s12 m4">
-                <i class="material-icons">hotel</i>                 <input type="text" placeholder="Rooms" id = "room-val">
-             </div>
-            </div>
-                 <div class="col s12 center">
+        <h5 class="center" style="color: white; text-shadow: 2px 2px 5px black;font-weight: 600;">Book NOW</h5>
+        <div class="row" style="display:fle">
+                <div class="card col s4 l2 offset-l1 ">
+                   <i class="material-icons">add_location</i>
+                   <input type="text" placeholder="Location" id = "location">
+                </div>
+                <div class="card col s4 l2">
+                   <i class="material-icons">date_range</i>
+                   <input type="text" placeholder="Check-IN" class="datepicker" id= "check-in"> 
+               </div>
+               <div class="card col s4 l2">
+                   <i class="material-icons">date_range</i>
+                   <input type="text" placeholder="Check-OUT" class="datepicker" id = "check-out">
+               </div>
+               <div class="card col s4 l2 offset-s2">
+                   <i class="material-icons">person</i>
+                   <input type="text" placeholder="Guests" id = "guest-val">
+               </div>
+               <div class="card col s4 l2">
+                    <i class="material-icons">hotel</i>
+                    <input type="text" placeholder="Rooms" id = "room-val">
+               </div>
+          
+        </div>
+                 <div class="col s12 center boton">
                     <button class="btn large deep-orange lighten-2 hoverable" id = "hotel-submit">Check Availability</button>
                     
-                </div>
+                 </div>
                 
         </div>
         <section>
@@ -585,19 +547,19 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m6">
-                    <div class="card-panel  teal white-text center">
+                    <div class="card-panel mt-0 teal darken-3 white-text center">
                         <i class="material-icons">email</i>
                         <h5>Contact us</h5>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo reiciendis molestias nam at repellat vitae iure fuga. Voluptatem cumque aperiam numquam obcaecati Lorem ipsum dolor sit amet consectetur adipisicing asperiores nemo optio dignissimos, mollitia autem eveniet sunt hic officiis. Possimus,  a. !</p>
                     </div>
-                    <div class="collection with-header  yellow darken-3">
-                      <h5 class="collection-header  yellow darken-3">Location:</h5>
-                      <h6 class="collection-item  yellow darken-3">JoyNey Agency</h6>
-                      <h6 class="collection-item  yellow darken-3">4444 xxxx st, suite 205 houston TX 55555</h6>
+                    <div class="collection with-header center yellow darken-2 z-depth-3">
+                      <h5 class="collection-header yellow darken-2" style="margin-top: 5px;">Location:</h5>
+                      <h6 class="collection-item  yellow darken-2">JoyNey Agency</h6>
+                      <h6 class="collection-item  yellow darken-2">4444 xxxx st, suite 205 houston TX 55555</h6>
                     </div>
                 </div>
-                <div class="col s12 m6">
-                    <div class="card-panel  blue-grey darken-1 white-text">
+                <div class="col s12 m6 blue-grey darken-3">
+                    <div class="card-panel  indigo lighten-4 form black-text">
                         <h5>Fill The Form</h5>
                         <div class="input-field">
                             <input type="text" placeholder="Name">
@@ -612,7 +574,7 @@
                             <textarea class="materialize-textarea" placeholder="Write your message here..."></textarea>
                         </div>
                         <div class="input-field">
-                            <input type="submit" value="submit" class="btn">
+                            <input type="submit" value="submit" class="btn orange darken-2">
                         </div>
                     </div>
                 </div>
