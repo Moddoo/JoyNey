@@ -517,3 +517,4 @@ $(".btn-floating").click(function() {
 });
 
 $(document).on("click", ".hotel-btn", floatingButtonHotel);
+
