@@ -14,7 +14,7 @@ $(document).ready(function() {
   M.Sidenav.init(sideNav);
   M.Slider.init(slider, {
     indicators: false,
-    height: 590,
+    height: 700,
     duration: 1000,
     interval: 2500
   });
@@ -49,6 +49,7 @@ let codeFrom, codeTo;
 let emptyFlightsArr = [];
 let emptyHotelArr = [];
 let emptyAirportArr = [];
+let localStArr = [];
 let i = 0;
 
 // Global Actions
@@ -189,7 +190,7 @@ function cardGeneratorHotel(array) {
     );
     let linkButton = elementGenerator(
       "a",
-      "btn-floating hotel-btn halfway-fab waves-effect waves-light red"
+      "btn-floating hotel-btn halfway-fab waves-effect waves-light green"
     );
     let iAdd = elementGenerator("i", "material-icons", "", "add");
     linkButton.append(iAdd);
@@ -486,100 +487,90 @@ $(".link").on("click", function() {
 });
 
 $(".a-flight").click(function() {
+  console.log("clicked");
+  let localStObj = {};
   let text = $(this)
     .children()
     .text();
 
-  $(this)
-    .children()
-    .text(text === "add" ? "close" : "add");
-  console.log(
-    $(this)
-      .children()
-      .text()
-  );
-  $(this).toggleClass("red green");
   let parent = $(this)
     .parent()
     .parent();
+
   if (text === "add") {
-    $(this).attr("data", i);
-    parent
-      .clone()
+    $(this)
       .attr("data", i)
+      .toggleClass("red green")
+      .children()
+      .text(text === "add" ? "close" : "add");
+
+    parent
+      .attr("data", i)
+      .clone(true)
       .appendTo($(".modal-items"));
+
+    localStObj[0] = parent.clone()[0].firstElementChild.firstElementChild.children[0].children[0].textContent;
+    localStObj[1] = parent.clone()[0].firstElementChild.firstElementChild.children[1].children[0].textContent;
+    localStObj[2] = parent.clone()[0].firstElementChild.firstElementChild.children[2].children[0].textContent;
+    localStObj[3] = parent.clone()[0].firstElementChild.firstElementChild.children[3].children[0].textContent;
+    localStObj[4] = parent.clone()[0].firstElementChild.firstElementChild.children[4].children[0].textContent;
+    localStObj.attr = parent.attr("data");
+    localStArr.push(localStObj);
+    localStorage.setItem("key", JSON.stringify(localStArr));
     i++;
   } else {
-    let data = $(this).attr("data");
-    console.log(data);
+    let data = $(this)
+      .parent()
+      .parent()
+      .attr("data");
+
+    $(".clone-results div[data = " + data + "] .card .btn-floating")
+      .toggleClass("red green")
+      .children()
+      .text(text === "add" ? "close" : "add");
     $(".modal-items div[data = " + data + "]").remove();
+    function index() {
+      for (let el of localStArr) {
+        if (el.attr === data) {
+          return localStArr.indexOf(el);
+        }
+      }
+    }
+    localStArr.splice(index(), 1);
+    localStorage.setItem("key", JSON.stringify(localStArr));
   }
 });
 
+function storage() {
+  let store = localStorage.getItem("key");
+  if (!store) {
+    localStorage.setItem("key", "");
+  } else {
+    localStArr = JSON.parse(localStorage.getItem("key"));
+    for (let el of localStArr) {
+      $(".row-f>:first-child").show();
+      let copy = $(".row-f>:first-child").clone(true);
+      copy.attr("data", el.attr);
+      copy[0].firstElementChild.firstElementChild.children[0].children[0].textContent =
+        el[0];
+      copy[0].firstElementChild.firstElementChild.children[1].children[0].textContent =
+        el[1];
+      copy[0].firstElementChild.firstElementChild.children[2].children[0].textContent =
+        el[2];
+      copy[0].firstElementChild.firstElementChild.children[3].children[0].textContent =
+        el[3];
+      copy[0].firstElementChild.firstElementChild.children[4].children[0].textContent =
+        el[4];
+      copy[0].firstElementChild.lastElementChild.classList.remove("green");
+      copy[0].firstElementChild.lastElementChild.classList.add("red");
+      copy[0].firstElementChild.lastElementChild.children[0].textContent =
+        "close";
+
+      copy.appendTo($(".modal-items"));
+      $(".row-f>:first-child").hide();
+    }
+  }
+}
+storage();
+
 $(document).on("click", ".hotel-btn", floatingButtonHotel);
-// $(document).ready(function(){
-//     // styling html
-//     const sideNav = document.querySelector(".sidenav");
-//     const slider = document.querySelectorAll(".slider");
-//     const scroll = document.querySelectorAll(".scrollspy");
-//     const parallax = document.querySelectorAll(".parallax");
-//     const tabs = document.querySelectorAll(".tabs");
-//     const materialbox = document.querySelectorAll(".materialboxed");
-//     const date = document.querySelectorAll(".datepicker");
-//     const vid = document.querySelectorAll(".vid-img");
-//     const frame = document.getElementById("frame");
-//     const cart = document.querySelectorAll(".modal");
-
-//     M.Sidenav.init(sideNav)
-//     M.Slider.init(slider, {
-//         indicators: false,
-//         height: 590,
-//         duration: 1000,
-//         interval: 2500,
-//     })
-//     M.ScrollSpy.init(scroll)
-//     M.Parallax.init(parallax)
-//     M.Tabs.init(tabs)
-//     M.Materialbox.init(materialbox)
-//     M.Datepicker.init(date)
-//     M.Modal.init(cart,{
-//         inDuration: 350,
-//     })
-
-//     vid[0].addEventListener("click",  function video() {
-//     frame.src = "https://www.youtube.com/embed/SSqgaFE9igo"})
-//     vid[1].addEventListener("click", function video() {
-//     frame.src = "https://www.youtube.com/embed/W1xwTqgzQ_g"})
-//     vid[2].addEventListener("click", function video() {
-//     frame.src = "https://www.youtube.com/embed/mTBSo3Ur4UA"})
-//     vid[3].addEventListener("click", function video() {
-//     frame.src = "https://www.youtube.com/embed/WiJubHinH8Y"})
-
-//     let btnF = $("#btn-flight");
-//     $(".row-f>:first-child").hide()
-//      btnF.click(function(){
-
-//     for(i=0; i<6; i++) {
-//         $(".row-f>:first-child").show()
-//         let copy = $(".row-f>:first-child").clone(true);
-
-//         copy[0].firstElementChild.firstElementChild.children[0].children[0].textContent="hello"
-//         copy[0].firstElementChild.firstElementChild.children[1].children[0].textContent="hello"
-//         copy[0].firstElementChild.firstElementChild.children[2].children[0].textContent="hello"
-//         copy[0].firstElementChild.firstElementChild.children[3].children[0].textContent="hello"
-//         copy[0].firstElementChild.firstElementChild.children[4].children[0].textContent="hello"
-//         copy.appendTo($(".row-f"))
-
-//     }
-//     $(".row-f>:first-child").hide()
-// })
-//     $(".btn-floating").click(function() {
-//         let text = $(this).children().text();
-//             $(this).children().text(
-//                 text === "add" ? "close" : "add"
-//             )
-//          console.log($(this).children().text())
-//         $(this).toggleClass("red green")
-//     })
-
-// })
