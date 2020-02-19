@@ -315,38 +315,6 @@ function cardGeneratorFlights(array1, array2) {
   $(".row-f>:first-child").hide();
 }
 
-function floatingButtonHotel() {
-  let text = $(this)
-    .children()
-    .text();
-  $(this)
-    .children()
-    .text(text === "add" ? "close" : "add");
-  console.log(
-    $(this)
-      .children()
-      .text()
-  );
-  $(this).toggleClass("red green");
-  let parent = $(this)
-    .parent()
-    .parent()
-    .parent();
-  console.log(parent);
-  if (text === "add") {
-    $(this).attr("data", i);
-    parent
-      .clone()
-      .attr("data", i)
-      .removeClass("m3")
-      .appendTo($(".modal-items"));
-    i++;
-  } else {
-    let data = $(this).attr("data");
-    $(".modal-items div[data = " + data + "]").remove();
-  }
-}
-
 // Event Listeners
 
 $("#btn-flight").on("click", function() {
@@ -574,3 +542,35 @@ function storage() {
 storage();
 
 $(document).on("click", ".hotel-btn", floatingButtonHotel);
+
+function floatingButtonHotel() {
+  let text = $(this)
+    .children()
+    .text();
+  $(this)
+    .children()
+    .text(text === "add" ? "close" : "add");
+  console.log(
+    $(this)
+      .children()
+      .text()
+  );
+  $(this).toggleClass("red green");
+  let parent = $(this)
+    .parent()
+    .parent()
+    .parent();
+  console.log(parent);
+  if (text === "add") {
+    $(this).attr("data", i);
+    parent
+      .clone()
+      .attr("data", i)
+      .removeClass("m3")
+      .appendTo($(".modal-items"));
+    i++;
+  } else {
+    let data = $(this).attr("data");
+    $(".modal-items div[data = " + data + "]").remove();
+  }
+}
