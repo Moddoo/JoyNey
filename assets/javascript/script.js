@@ -87,7 +87,7 @@ function dineInAJAX(locationID) {
         var addLink = $("<a>");
         addLink.attr(
           "class",
-          "btn-floating halfway-fab waves-effect waves-light green"
+          "btn-floating aaron halfway-fab waves-effect waves-light green"
         );
         var addButton = $("<i>").attr("class", "material-icons");
         addButton.text("add");
@@ -181,7 +181,7 @@ function attractionAJAX(locationID) {
         var addLink = $("<a>");
         addLink.attr(
           "class",
-          "btn-floating halfway-fab waves-effect waves-light green"
+          "btn-floating aaron halfway-fab waves-effect waves-light green"
         );
         var addButton = $("<i>").attr("class", "material-icons");
         addButton.text("add");
@@ -304,7 +304,7 @@ $("#restaurants-button").on("click", function(event) {
           var addLink = $("<a>");
           addLink.attr(
             "class",
-            "btn-floating halfway-fab waves-effect waves-light green"
+            "btn-floating aaron halfway-fab waves-effect waves-light green"
           );
           var addButton = $("<i>").attr("class", "material-icons");
           addButton.text("add");
@@ -423,7 +423,7 @@ $("#parks-button").on("click", function(event) {
       var addLink = $("<a>");
       addLink.attr(
         "class",
-        "btn-floating parks btn-large waves-effect waves-light green right"
+        "btn-floating aaron parks btn-large waves-effect waves-light green right"
       );
       var addButton = $("<i>").attr("class", "material-icons");
       addButton.text("add");
@@ -528,7 +528,7 @@ $("#events-button").on("click", function(event) {
           var addLink = $("<a>");
           addLink.attr(
             "class",
-            "btn-floating halfway-fab waves-effect waves-light green"
+            "btn-floating aaron halfway-fab waves-effect waves-light green"
           );
           var addButton = $("<i>").attr("class", "material-icons");
           addButton.text("add");
@@ -637,7 +637,7 @@ $("#parks-div").on("click", function(event) {
 
 // Aaron Modified
 
-$(document).on("click", ".btn-floating", buttonFunction);
+$(document).on("click", ".aaron", buttonFunction);
 
 function buttonFunction() {
   let text = $(this)
