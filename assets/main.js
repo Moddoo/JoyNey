@@ -486,66 +486,71 @@ $(".link").on("click", function() {
   $("#passenger-count-one").val("");
 });
 
-$(".btn-floating").click(function() {
-  console.log("clicked")
+$(".a-flight").click(function() {
+  console.log("clicked");
   let localStObj = {};
   let text = $(this)
     .children()
     .text();
 
-  let parent = $(this).parent().parent();
- 
+  let parent = $(this)
+    .parent()
+    .parent();
+
   if (text === "add") {
     $(this)
-    .attr("data", i)
-    .toggleClass("red green")
-    .children()
-    .text(text === "add" ? "close" : "add");
+      .attr("data", i)
+      .toggleClass("red green")
+      .children()
+      .text(text === "add" ? "close" : "add");
 
     parent
       .attr("data", i)
       .clone(true)
       .appendTo($(".modal-items"));
 
-      localStObj[0] = parent.clone()[0].firstElementChild.firstElementChild.children[0].children[0].textContent
-      localStObj[1] = parent.clone()[0].firstElementChild.firstElementChild.children[1].children[0].textContent
-      localStObj[2] = parent.clone()[0].firstElementChild.firstElementChild.children[2].children[0].textContent
-      localStObj[3] = parent.clone()[0].firstElementChild.firstElementChild.children[3].children[0].textContent
-      localStObj[4] = parent.clone()[0].firstElementChild.firstElementChild.children[4].children[0].textContent
-      localStObj.attr = parent.attr("data")
-      localStArr.push(localStObj);
-      localStorage.setItem("key",JSON.stringify(localStArr))
+    localStObj[0] = parent.clone()[0].firstElementChild.firstElementChild.children[0].children[0].textContent;
+    localStObj[1] = parent.clone()[0].firstElementChild.firstElementChild.children[1].children[0].textContent;
+    localStObj[2] = parent.clone()[0].firstElementChild.firstElementChild.children[2].children[0].textContent;
+    localStObj[3] = parent.clone()[0].firstElementChild.firstElementChild.children[3].children[0].textContent;
+    localStObj[4] = parent.clone()[0].firstElementChild.firstElementChild.children[4].children[0].textContent;
+    localStObj.attr = parent.attr("data");
+    localStArr.push(localStObj);
+    localStorage.setItem("key", JSON.stringify(localStArr));
     i++;
   } else {
-    let data = $(this).parent().parent().attr("data");
- 
+    let data = $(this)
+      .parent()
+      .parent()
+      .attr("data");
+
     $(".clone-results div[data = " + data + "] .card .btn-floating")
-              .toggleClass("red green")
-              .children()
-              .text(text === "add" ? "close" : "add");
+      .toggleClass("red green")
+      .children()
+      .text(text === "add" ? "close" : "add");
     $(".modal-items div[data = " + data + "]").remove();
     function index() {
-      for(let el of localStArr) {
-        if(el.attr === data) {
-          return localStArr.indexOf(el)
-        } 
+      for (let el of localStArr) {
+        if (el.attr === data) {
+          return localStArr.indexOf(el);
+        }
       }
     }
-    localStArr.splice(index(),1);
-    localStorage.setItem("key", JSON.stringify(localStArr))
+    localStArr.splice(index(), 1);
+    localStorage.setItem("key", JSON.stringify(localStArr));
   }
 });
 
 function storage() {
   let store = localStorage.getItem("key");
-  if(!store) {
-    localStorage.setItem("key","")
-  } else{
+  if (!store) {
+    localStorage.setItem("key", "");
+  } else {
     localStArr = JSON.parse(localStorage.getItem("key"));
-    for(let el of localStArr) {
+    for (let el of localStArr) {
       $(".row-f>:first-child").show();
       let copy = $(".row-f>:first-child").clone(true);
-      copy.attr("data", el.attr)
+      copy.attr("data", el.attr);
       copy[0].firstElementChild.firstElementChild.children[0].children[0].textContent =
         el[0];
       copy[0].firstElementChild.firstElementChild.children[1].children[0].textContent =
@@ -553,19 +558,19 @@ function storage() {
       copy[0].firstElementChild.firstElementChild.children[2].children[0].textContent =
         el[2];
       copy[0].firstElementChild.firstElementChild.children[3].children[0].textContent =
-         el[3];
+        el[3];
       copy[0].firstElementChild.firstElementChild.children[4].children[0].textContent =
-         el[4];
+        el[4];
       copy[0].firstElementChild.lastElementChild.classList.remove("green");
       copy[0].firstElementChild.lastElementChild.classList.add("red");
-      copy[0].firstElementChild.lastElementChild.children[0].textContent = "close"
-        
-        copy.appendTo($(".modal-items"));
-        $(".row-f>:first-child").hide();
-      }
+      copy[0].firstElementChild.lastElementChild.children[0].textContent =
+        "close";
+
+      copy.appendTo($(".modal-items"));
+      $(".row-f>:first-child").hide();
     }
   }
-storage()
+}
+storage();
 
 $(document).on("click", ".hotel-btn", floatingButtonHotel);
-
