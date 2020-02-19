@@ -423,7 +423,7 @@ $("#parks-button").on("click", function(event) {
       var addLink = $("<a>");
       addLink.attr(
         "class",
-        "btn-floating btn-large waves-effect waves-light green right"
+        "btn-floating parks btn-large waves-effect waves-light green right"
       );
       var addButton = $("<i>").attr("class", "material-icons");
       addButton.text("add");
@@ -634,5 +634,37 @@ $("#parks-div").on("click", function(event) {
     toggleButton(event.target);
   }
 });
+
+// Aaron Modified
+
+$(document).on("click", ".btn-floating", buttonFunction);
+
+function buttonFunction() {
+  let text = $(this)
+    .children()
+    .text();
+  console.log(text);
+  let parent = $(this)
+    .parent()
+    .parent()
+    .parent();
+  console.log($(this).hasClass("parks"));
+  if ($(this).hasClass("parks")) {
+    parent = $(this).parent();
+  }
+  console.log(parent);
+  if (text === "close") {
+    $(this).attr("data", i);
+    parent
+      .clone()
+      .attr("data", i)
+      .appendTo($(".modal-items"));
+    i++;
+  } else {
+    let data = $(this).attr("data");
+    console.log(data);
+    $(".modal-items div[data = " + data + "]").remove();
+  }
+}
 
 renderCart();
