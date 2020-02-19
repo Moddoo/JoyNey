@@ -485,7 +485,7 @@ $(".link").on("click", function() {
   $("#passenger-count-one").val("");
 });
 
-$(".btn-floating").click(function() {
+$(".a-flight").click(function() {
   let text = $(this)
     .children()
     .text();
