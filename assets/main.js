@@ -319,10 +319,10 @@ function cardGeneratorFlights(array1, array2) {
 
 $("#btn-flight").on("click", function() {
   $(".results-div").empty();
-  let flyFromRound = $("#fly-from-round-trip").val();
-  let flyToRound = $("#fly-to-round-trip").val();
-  let flyFromOne = $("#fly-from-one-way").val();
-  let flyToOne = $("#fly-to-one-way").val();
+  let flyFromRound = $("#fly-from-round-trip").val().split(",")[0];
+  let flyToRound = $("#fly-to-round-trip").val().split(",")[0];
+  let flyFromOne = $("#fly-from-one-way").val().split(",")[0];
+  let flyToOne = $("#fly-to-one-way").val().split(",")[0];
   let departureDateRound = $("#departing-round-trip").val();
   let departureDateOne = $("#departing-one-way").val();
   let departureDateValRound = new Date(departureDateRound);
